@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProCut Lawn Care & Landscaping</title>
+    <style>
+        /* CSS Reset and Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --accent: #81c784;
+            --dark: #212121;
+            --light: #f4f6f4;
+            --white: #ffffff;
+            --gray: #666666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1592417817098-8f3d6eb23659?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 1rem;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Section Layouts */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--primary-dark);
+        }
+
+        /* About Section */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .about-text p {
+            margin-bottom: 1.25rem;
+            color: var(--gray);
+        }
+
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--light);
+            border-radius: 12px;
+            padding: 4rem 2rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        /* Contact Section / Quote Form */
+        .contact-container {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item span {
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Navigation */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .nav-links {
+                display: none; /* Can be enhanced with a JavaScript mobile toggle menu */
+            }
+
+            .about-container, .contact-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">🌱 ProCut Lawn Care</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn">Get a Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>A Healthier, Greener Lawn Made Easy</h1>
+            <p>Professional residential and commercial lawn care services tailored to your property's needs.</p>
+            <a href="#contact" class="btn">Request a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-title">
+            <h2>Our Lawn Care Services</h2>
+            <p>Keep your outdoor space looking its best year-round.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">🚜</div>
+                <h3>Lawn Mowing & Edging</h3>
+                <p>Regular maintenance including precision mowing, string trimming, and driveway/walkway edging.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🌱</div>
+                <h3>Fertilization & Weed Control</h3>
+                <p>Custom nutrition programs and weed management treatments to keep your turf lush and healthy.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🌿</div>
+                <h3>Aeration & Overseeding</h3>
+                <p>Relieve soil compaction and introduce premium seed blends to thicken thin areas in your lawn.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🍂</div>
+                <h3>Seasonal Cleanups</h3>
+                <p>Spring leaf removal, fall garden bed clearing, and debris cleanup to prepare your lawn for the season.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h3>Reliable Lawn Care You Can Count On</h3>
+                <p>At ProCut Lawn Care, we take pride in delivering top-notch turf management and landscaping services. With years of experience serving our local community, our team is dedicated to reliability, attention to detail, and exceptional customer service.</p>
+                <p>Whether you need weekly maintenance or a seasonal overhaul, we bring professional equipment and unmatched expertise to every yard.</p>
+                <a href="#contact" class="btn">Work With Us</a>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800&q=80" alt="Beautiful green lawn">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-title">
+            <h2>What Our Customers Say</h2>
+            <p>Read honest reviews from homeowners in your area.</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"ProCut completely transformed our lawn this spring. They are punctual, thorough, and very reasonably priced."</p>
+                <div class="author">- Sarah M.</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"The best lawn maintenance service in town! Always clean up after mowing and my grass has never looked greener."</p>
+                <div class="author">- James T.</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Their seasonal cleanup service saved me hours of work. Highly recommend their aeration and fertilization programs!"</p>
+                <div class="author">- David R.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Free Quote Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Get Your Free Estimate</h2>
+            <p>Contact us today and receive a quote within 24 hours.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <div><strong>Phone:</strong> (555) 123-4567</div>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <div><strong>Email:</strong> info@procutlawncare.com</div>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <div><strong>Service Area:</strong> Whitby, ON & Surrounding Areas</div>
+                </div>
+                <div class="contact-item">
+                    <span>⏰</span>
+                    <div><strong>Hours:</strong> Mon - Sat: 7:00 AM - 6:00 PM</div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form onsubmit="alert('Thank you for requesting a quote! We will contact you soon.'); return false;">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required placeholder="(555) 000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Requested Service</label>
+                        <select id="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="mowing">Lawn Mowing & Edging</option>
+                            <option value="fertilization">Fertilization & Weed Control</option>
+                            <option value="aeration">Aeration & Overseeding</option>
+                            <option value="cleanup">Seasonal Cleanup</option>
+                            <option value="other">Other / Custom</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Property Address & Details</label>
+                        <textarea id="message" placeholder="Please provide your address and any specific details about your yard..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Send Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ProCut Lawn Care. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -3,495 +3,633 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProCut Lawn Care & Landscaping</title>
+    <title>Massive Lawncare | Low Price, High Quality | Whitby, ON</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brandDark: '#1a1a1a',
+                        brandCard: '#242424',
+                        lawnGreen: '#2e7d32',
+                        leafGreen: '#4caf50',
+                        accentGreen: '#81c784',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* CSS Reset and Variables */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary: #2e7d32;
-            --primary-dark: #1b5e20;
-            --accent: #81c784;
-            --dark: #212121;
-            --light: #f4f6f4;
-            --white: #ffffff;
-            --gray: #666666;
-        }
-
         html {
             scroll-behavior: smooth;
         }
-
-        body {
-            color: var(--dark);
-            line-height: 1.6;
-            background-color: var(--white);
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        /* Navigation Bar */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
         }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
+        ::-webkit-scrollbar-thumb {
+            background: #2e7d32;
+            border-radius: 4px;
         }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4caf50;
         }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://images.unsplash.com/photo-1592417817098-8f3d6eb23659?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 1rem;
-            margin-top: 60px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Section Layouts */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.25rem;
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            font-size: 1.1rem;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--light);
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .service-card h3 {
-            margin-bottom: 0.75rem;
-            color: var(--primary-dark);
-        }
-
-        /* About Section */
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-text h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            color: var(--primary-dark);
-        }
-
-        .about-text p {
-            margin-bottom: 1.25rem;
-            color: var(--gray);
-        }
-
-        .about-img {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .about-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background-color: var(--light);
-            border-radius: 12px;
-            padding: 4rem 2rem;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 1rem;
-            color: var(--gray);
-        }
-
-        .testimonial-card .author {
-            font-weight: 700;
-            color: var(--primary-dark);
-        }
-
-        /* Contact Section / Quote Form */
-        .contact-container {
-            display: flex;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-info, .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 1rem;
-            color: var(--primary-dark);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item span {
-            font-size: 1.2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-group input, 
-        .form-group select, 
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            height: 120px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 3rem;
-        }
-
-        footer p {
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Navigation */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.25rem;
-            }
-
-            .nav-links {
-                display: none; /* Can be enhanced with a JavaScript mobile toggle menu */
-            }
-
-            .about-container, .contact-container {
-                flex-direction: column;
-            }
+        .logo-img {
+            object-fit: contain;
+            filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.4));
         }
     </style>
 </head>
-<body>
+<body class="font-sans bg-brandDark text-slate-100 antialiased selection:bg-leafGreen selection:text-brandDark">
 
-    <!-- Navigation Header -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo">🌱 ProCut Lawn Care</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#contact" class="btn">Get a Quote</a>
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brandDark/95 backdrop-blur-md border-b border-lawnGreen/30 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo with Image -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <img src="massive_mowing_final_logo-removebg-preview.jpg" alt="Massive Lawncare Logo" class="h-14 w-auto logo-img group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://placehold.co/120x120/1a1a1a/4caf50?text=MASSIVE';">
+                    <div class="flex flex-col">
+                        <span class="text-xl font-black tracking-tight text-white group-hover:text-leafGreen transition-colors">MASSIVE</span>
+                        <span class="text-[11px] font-extrabold tracking-widest text-accentGreen uppercase -mt-1">Lawncare</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                    <a href="#home" class="hover:text-leafGreen transition-colors">Home</a>
+                    <a href="#services" class="hover:text-leafGreen transition-colors">Services</a>
+                    <a href="#calculator" class="hover:text-leafGreen transition-colors">Estimate Calculator</a>
+                    <a href="#transformations" class="hover:text-leafGreen transition-colors">Transformations</a>
+                    <a href="#about" class="hover:text-leafGreen transition-colors">About Us</a>
+                    <a href="#reviews" class="hover:text-leafGreen transition-colors">Reviews</a>
+                    <a href="#contact" class="hover:text-leafGreen transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="#contact" class="bg-gradient-to-r from-lawnGreen to-leafGreen hover:from-leafGreen hover:to-lawnGreen text-white font-extrabold text-sm px-6 py-3 rounded-xl shadow-lg shadow-lawnGreen/30 transition-all transform hover:-translate-y-0.5">
+                        Get a Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-xl bg-brandCard border border-lawnGreen/40 text-slate-300 hover:text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden border-b border-lawnGreen/30 bg-brandDark px-4 pt-3 pb-6 space-y-3">
+            <a href="#home" class="block text-slate-200 hover:text-leafGreen font-bold py-1">Home</a>
+            <a href="#services" class="block text-slate-200 hover:text-leafGreen font-bold py-1">Services</a>
+            <a href="#calculator" class="block text-slate-200 hover:text-leafGreen font-bold py-1">Instant Calculator</a>
+            <a href="#transformations" class="block text-slate-200 hover:text-leafGreen font-bold py-1">Transformations</a>
+            <a href="#about" class="block text-slate-200 hover:text-leafGreen font-bold py-1">About Us</a>
+            <a href="#reviews" class="block text-slate-200 hover:text-leafGreen font-bold py-1">Reviews ($5 Off)</a>
+            <a href="#contact" class="block text-slate-200 hover:text-leafGreen font-bold py-1">Contact Us</a>
+            <a href="#contact" class="block text-center bg-leafGreen py-3 rounded-xl text-brandDark font-black">Get Free Estimate</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>A Healthier, Greener Lawn Made Easy</h1>
-            <p>Professional residential and commercial lawn care services tailored to your property's needs.</p>
-            <a href="#contact" class="btn">Request a Free Quote</a>
+    <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-b from-[#141414] via-brandDark to-[#141414]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lawnGreen/20 border border-leafGreen/40 text-leafGreen text-xs font-bold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-leafGreen animate-ping"></span>
+                        Whitby, ON • Local Youth Entrepreneurs
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-[1.1]">
+                        MASSIVE <span class="text-transparent bg-clip-text bg-gradient-to-r from-leafGreen via-accentGreen to-emerald-300">LAWNCARE</span>
+                    </h1>
+
+                    <!-- Featured Slogan Banner -->
+                    <div class="inline-block bg-brandCard border border-lawnGreen/50 px-6 py-2.5 rounded-2xl shadow-md">
+                        <span class="text-2xl sm:text-3xl font-extrabold text-white font-serif italic tracking-wide">
+                            "Low Price, High Quality"
+                        </span>
+                    </div>
+
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Whitby's dedicated lawn care team. Reliable bi-weekly & weekly mowing, sharp edging, aeration, seasonal cleanups, and winter snow shovelling—all at rates that beat industry averages.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-leafGreen hover:bg-emerald-500 text-brandDark font-black text-base shadow-xl shadow-leafGreen/20 transition-all hover:scale-[1.02]">
+                            Get Instant Quote
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                        <a href="#services" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-brandCard border border-lawnGreen/50 text-slate-200 hover:bg-lawnGreen/20 font-bold text-base transition-colors">
+                            Explore Services
+                        </a>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="pt-8 border-t border-brandCard grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-white">29+</div>
+                            <div class="text-xs text-slate-400 font-semibold">Satisfied Customers</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-leafGreen">Starts $20</div>
+                            <div class="text-xs text-slate-400 font-semibold">Affordable Lawn Care</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-white">100%</div>
+                            <div class="text-xs text-slate-400 font-semibold">Quality Guaranteed</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column / Logo Showcase Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative bg-brandCard p-8 rounded-3xl border border-lawnGreen/50 shadow-2xl text-center max-w-md w-full">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-lawnGreen text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow">
+                            Official Brand Badge
+                        </div>
+                        <img src="massive_mowing_final_logo-removebg-preview.jpg" alt="Massive Lawncare Crest" class="w-64 sm:w-72 h-auto mx-auto my-2 logo-img" onerror="this.onerror=null; this.src='https://placehold.co/300x300/1a1a1a/4caf50?text=Massive+Lawncare';">
+                        <div class="mt-4 pt-4 border-t border-slate-800">
+                            <p class="text-xs font-bold text-slate-300">Whitby's Top Young Entrepreneurs & Lawn Experts</p>
+                            <p class="text-[11px] text-slate-400 mt-1 italic">Founded in 2024 • Hard Work, Real Results</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services">
-        <div class="section-title">
-            <h2>Our Lawn Care Services</h2>
-            <p>Keep your outdoor space looking its best year-round.</p>
+    <section id="services" class="py-24 bg-[#141414] border-t border-lawnGreen/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-black text-leafGreen uppercase tracking-widest">Our Services</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Low Price, High Quality Services</h2>
+                <p class="text-slate-400 mt-3 text-base">Complete residential and commercial property care for every season in Whitby.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-brandCard p-8 rounded-2xl border border-lawnGreen/30 hover:border-leafGreen transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-lawnGreen/20 border border-lawnGreen/40 flex items-center justify-center text-2xl mb-6">🚜</div>
+                        <h3 class="text-xl font-extrabold text-white mb-2 group-hover:text-leafGreen transition-colors">Bi-Weekly & Weekly Mowing</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Precision lawn cuts, sharp perimeter trimming, and complete blowing of grass clippings off driveways and walkways.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-leafGreen bg-lawnGreen/20 py-2 px-3 rounded-lg inline-block w-max">Starting at $20 / Visit</span>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-brandCard p-8 rounded-2xl border border-lawnGreen/30 hover:border-leafGreen transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-lawnGreen/20 border border-lawnGreen/40 flex items-center justify-center text-2xl mb-6">✂️</div>
+                        <h3 class="text-xl font-extrabold text-white mb-2 group-hover:text-leafGreen transition-colors">String Trimming & Edging</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Clean, crisp vertical borders along driveways, sidewalks, garden beds, and fences for elevated curb appeal.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-leafGreen bg-lawnGreen/20 py-2 px-3 rounded-lg inline-block w-max">Included or Standalone</span>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-brandCard p-8 rounded-2xl border border-lawnGreen/30 hover:border-leafGreen transition-all flex flex-col justify-between group relative overflow-hidden">
+                    <div class="absolute top-3 right-3 bg-leafGreen text-brandDark text-[9px] font-black px-2 py-0.5 rounded uppercase">Neighborhood Deal</div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-lawnGreen/20 border border-lawnGreen/40 flex items-center justify-center text-2xl mb-6">🌱</div>
+                        <h3 class="text-xl font-extrabold text-white mb-2 group-hover:text-leafGreen transition-colors">Aeration Day Specials</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Grouped neighborhood aeration days to relieve soil compaction, boost root growth, and pass massive savings to you!
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-leafGreen bg-lawnGreen/20 py-2 px-3 rounded-lg inline-block w-max">Grouped Neighborhood Discount</span>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-brandCard p-8 rounded-2xl border border-lawnGreen/30 hover:border-leafGreen transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-lawnGreen/20 border border-lawnGreen/40 flex items-center justify-center text-2xl mb-6">🍂</div>
+                        <h3 class="text-xl font-extrabold text-white mb-2 group-hover:text-leafGreen transition-colors">Seasonal Cleanups</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Full spring stick/debris clearing and thorough fall leaf removal to keep your lawn healthy year-round.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-leafGreen bg-lawnGreen/20 py-2 px-3 rounded-lg inline-block w-max">Custom Flat Rates</span>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-brandCard p-8 rounded-2xl border border-sky-500/30 hover:border-sky-400 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-sky-950 border border-sky-700 flex items-center justify-center text-2xl mb-6">❄️</div>
+                        <h3 class="text-xl font-extrabold text-white mb-2 group-hover:text-sky-300 transition-colors">Winter Snow Shovelling</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Prompt snow removal for driveways, front steps, and walkways completed after school and during winter storms.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-sky-300 bg-sky-950/80 py-2 px-3 rounded-lg inline-block w-max">1-Car & 2-Car Driveway Options</span>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-brandCard p-8 rounded-2xl border border-lawnGreen/30 hover:border-leafGreen transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-lawnGreen/20 border border-lawnGreen/40 flex items-center justify-center text-2xl mb-6">📲</div>
+                        <h3 class="text-xl font-extrabold text-white mb-2 group-hover:text-leafGreen transition-colors">Text Updates & Reminders</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            We keep you informed! Simple, direct text messages letting you know when your property is serviced.
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold text-leafGreen bg-lawnGreen/20 py-2 px-3 rounded-lg inline-block w-max">100% Free Communication</span>
+                </div>
+
+            </div>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="icon">🚜</div>
-                <h3>Lawn Mowing & Edging</h3>
-                <p>Regular maintenance including precision mowing, string trimming, and driveway/walkway edging.</p>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="py-24 bg-brandDark">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brandCard border border-lawnGreen/40 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="px-3 py-1 bg-lawnGreen/30 text-leafGreen text-xs font-extrabold rounded-full uppercase tracking-wider">Low Price Calculator</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-3">Instant Estimate Calculator</h2>
+                    <p class="text-slate-400 text-sm mt-2">See how our low prices fit your property in seconds.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Controls -->
+                    <div class="lg:col-span-7 space-y-6">
+                        
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">1. Choose Service</label>
+                            <select id="calcService" onchange="calculateEstimate()" class="w-full bg-brandDark border border-lawnGreen/40 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-leafGreen">
+                                <option value="mowing-weekly">Weekly Lawn Mowing & Edging</option>
+                                <option value="mowing-biweekly">Bi-Weekly Lawn Mowing & Edging</option>
+                                <option value="aeration">Aeration Special</option>
+                                <option value="cleanup">Seasonal Yard Cleanup</option>
+                                <option value="snow">Winter Snow Shovelling</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">2. Property / Driveway Size</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button type="button" onclick="setSize(1, this)" class="calc-size-btn py-3 px-2 text-center rounded-xl border border-leafGreen bg-lawnGreen/30 text-white font-bold text-xs">
+                                    Small (1-Car)
+                                </button>
+                                <button type="button" onclick="setSize(1.3, this)" class="calc-size-btn py-3 px-2 text-center rounded-xl border border-lawnGreen/30 bg-brandDark text-slate-300 font-bold text-xs hover:border-lawnGreen">
+                                    Medium (2-Car)
+                                </button>
+                                <button type="button" onclick="setSize(1.6, this)" class="calc-size-btn py-3 px-2 text-center rounded-xl border border-lawnGreen/30 bg-brandDark text-slate-300 font-bold text-xs hover:border-lawnGreen">
+                                    Large Property
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="flex items-center gap-3 p-3 rounded-xl bg-brandDark border border-lawnGreen/30 cursor-pointer">
+                                <input type="checkbox" id="calcAddon" onchange="calculateEstimate()" class="w-4 h-4 accent-leafGreen rounded">
+                                <span class="text-xs text-slate-300 font-medium">Add Garden Bed Trimming & Extra Edging</span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <!-- Output Box -->
+                    <div class="lg:col-span-5 bg-gradient-to-b from-lawnGreen/30 to-brandDark border border-lawnGreen/50 p-6 sm:p-8 rounded-2xl text-center space-y-4">
+                        <span class="text-xs font-bold text-leafGreen uppercase tracking-widest">Estimated Price Range</span>
+                        <div class="text-4xl font-black text-white" id="estimateOutput">$20 - $30</div>
+                        <p class="text-xs text-slate-300">
+                            High Quality work at a Low Price. Final quote confirmed via short text message!
+                        </p>
+                        <a href="#contact" onclick="useCalculatedEstimate()" class="inline-block w-full py-3.5 px-4 rounded-xl bg-leafGreen hover:bg-emerald-500 text-brandDark font-black text-sm shadow-lg transition-all">
+                            Book This Price
+                        </a>
+                    </div>
+                </div>
+
             </div>
-            <div class="service-card">
-                <div class="icon">🌱</div>
-                <h3>Fertilization & Weed Control</h3>
-                <p>Custom nutrition programs and weed management treatments to keep your turf lush and healthy.</p>
+        </div>
+    </section>
+
+    <!-- Transformations Gallery -->
+    <section id="transformations" class="py-24 bg-[#141414] border-t border-lawnGreen/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-black text-leafGreen uppercase tracking-widest">Real Results</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Lawn Transformations</h2>
+                <p class="text-slate-400 mt-2 text-sm">See the difference crisp lines and thorough work make.</p>
             </div>
-            <div class="service-card">
-                <div class="icon">🌿</div>
-                <h3>Aeration & Overseeding</h3>
-                <p>Relieve soil compaction and introduce premium seed blends to thicken thin areas in your lawn.</p>
-            </div>
-            <div class="service-card">
-                <div class="icon">🍂</div>
-                <h3>Seasonal Cleanups</h3>
-                <p>Spring leaf removal, fall garden bed clearing, and debris cleanup to prepare your lawn for the season.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-brandCard rounded-2xl overflow-hidden border border-lawnGreen/30">
+                    <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb23659?auto=format&fit=crop&w=600&q=80" alt="Lawn stripes" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-white text-base">Clean Mow & Stripe Work</h3>
+                        <p class="text-xs text-slate-400 mt-1">Whitby Residential Property — Regular maintenance with crisp edges.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brandCard rounded-2xl overflow-hidden border border-lawnGreen/30">
+                    <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=600&q=80" alt="Garden edging" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-white text-base">Precision Border Edging</h3>
+                        <p class="text-xs text-slate-400 mt-1">Driveway and walkway perimeter trimming for neat curb appeal.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brandCard rounded-2xl overflow-hidden border border-lawnGreen/30">
+                    <img src="https://images.unsplash.com/photo-1584479898061-15742e14f50d?auto=format&fit=crop&w=600&q=80" alt="Lawn cleanup" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-white text-base">Seasonal Debris Cleanup</h3>
+                        <p class="text-xs text-slate-400 mt-1">Leaves, sticks, and overgrown grass restored to prime health.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Us Section -->
-    <section id="about">
-        <div class="about-container">
-            <div class="about-text">
-                <h3>Reliable Lawn Care You Can Count On</h3>
-                <p>At ProCut Lawn Care, we take pride in delivering top-notch turf management and landscaping services. With years of experience serving our local community, our team is dedicated to reliability, attention to detail, and exceptional customer service.</p>
-                <p>Whether you need weekly maintenance or a seasonal overhaul, we bring professional equipment and unmatched expertise to every yard.</p>
-                <a href="#contact" class="btn">Work With Us</a>
-            </div>
-            <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800&q=80" alt="Beautiful green lawn">
+    <section id="about" class="py-24 bg-brandDark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="px-3 py-1 bg-lawnGreen/30 text-leafGreen text-xs font-bold rounded-full uppercase tracking-wider">About Massive Lawncare</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Whitby High School Entrepreneurs</h2>
+                    <p class="text-slate-300 leading-relaxed text-base">
+                        Massive Lawncare was started in 2024 when we were 14 years old. Today at 15, while continuing high school right here in Whitby, we take huge pride in building an actual high-quality service business.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed text-base">
+                        We invest our effort into fuel-efficient mowers, string trimmers, and reliable tools. Because our overhead is low, we can deliver <strong class="text-white">Low Price, High Quality</strong> results that make your yard the best-looking on the block.
+                    </p>
+                    <div class="p-4 bg-brandCard rounded-2xl border border-lawnGreen/40 flex items-center gap-4">
+                        <img src="massive_mowing_final_logo-removebg-preview.jpg" alt="Logo mini" class="w-16 h-16 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/1a1a1a/4caf50?text=ML';">
+                        <div>
+                            <div class="font-bold text-white text-sm">Hard Work, Real Results</div>
+                            <div class="text-xs text-slate-400">Serving 29+ happy Whitby homeowners every season.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 bg-brandCard p-8 rounded-3xl border border-lawnGreen/40 space-y-6">
+                    <h3 class="text-xl font-extrabold text-white border-b border-slate-800 pb-3">Why Work With Us?</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-leafGreen font-bold">✓</span>
+                            <span class="text-sm text-slate-300"><strong class="text-white">Low Price Guarantee:</strong> Prices start at just $20 per cut.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-leafGreen font-bold">✓</span>
+                            <span class="text-sm text-slate-300"><strong class="text-white">High Quality Finish:</strong> We don't rush. Every edge is string-trimmed and blown clear.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-leafGreen font-bold">✓</span>
+                            <span class="text-sm text-slate-300"><strong class="text-white">Text Updates:</strong> Convenient communication right to your phone.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-leafGreen font-bold">✓</span>
+                            <span class="text-sm text-slate-300"><strong class="text-white">Year-Round Care:</strong> Mowing in spring/summer, aeration in fall, snow shovelling in winter.</span>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="section-title">
-            <h2>What Our Customers Say</h2>
-            <p>Read honest reviews from homeowners in your area.</p>
-        </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <p>"ProCut completely transformed our lawn this spring. They are punctual, thorough, and very reasonably priced."</p>
-                <div class="author">- Sarah M.</div>
+    <!-- Reviews Section & $5 Survey Banner -->
+    <section id="reviews" class="py-24 bg-[#141414] border-t border-lawnGreen/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-black text-leafGreen uppercase tracking-widest">Customer Reviews</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">What Whitby Neighbors Say</h2>
             </div>
-            <div class="testimonial-card">
-                <p>"The best lawn maintenance service in town! Always clean up after mowing and my grass has never looked greener."</p>
-                <div class="author">- James T.</div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-brandCard p-6 rounded-2xl border border-lawnGreen/30">
+                    <div class="text-amber-400 font-bold mb-2">★★★★★</div>
+                    <p class="text-slate-300 text-sm italic mb-4">"Massive Lawncare lives up to their slogan. Low price, high quality mowing every single week!"</p>
+                    <div class="text-xs font-bold text-leafGreen">— Whitby Homeowner</div>
+                </div>
+
+                <div class="bg-brandCard p-6 rounded-2xl border border-lawnGreen/30">
+                    <div class="text-amber-400 font-bold mb-2">★★★★★</div>
+                    <p class="text-slate-300 text-sm italic mb-4">"Super polite guys. The edging on our driveway looks fantastic and they always text when finished."</p>
+                    <div class="text-xs font-bold text-leafGreen">— Brooklin Customer</div>
+                </div>
+
+                <div class="bg-brandCard p-6 rounded-2xl border border-lawnGreen/30">
+                    <div class="text-amber-400 font-bold mb-2">★★★★★</div>
+                    <p class="text-slate-300 text-sm italic mb-4">"Great winter snow shovelling service! Kept our walkway clear all season."</p>
+                    <div class="text-xs font-bold text-leafGreen">— Whitby Resident</div>
+                </div>
             </div>
-            <div class="testimonial-card">
-                <p>"Their seasonal cleanup service saved me hours of work. Highly recommend their aeration and fertilization programs!"</p>
-                <div class="author">- David R.</div>
+
+            <!-- $5 Survey Incentive Banner -->
+            <div class="bg-gradient-to-r from-lawnGreen to-emerald-700 p-8 rounded-3xl text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+                <div>
+                    <h3 class="text-2xl font-black">Get $5 OFF Your Next Cut!</h3>
+                    <p class="text-xs text-slate-100 mt-1">Leave us feedback on our short customer survey and receive $5 off your next service.</p>
+                </div>
+                <a href="#contact" class="shrink-0 px-6 py-3 bg-brandDark text-leafGreen hover:bg-black font-extrabold text-sm rounded-xl transition-colors">
+                    Claim $5 Off
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Contact & Free Quote Section -->
-    <section id="contact">
-        <div class="section-title">
-            <h2>Get Your Free Estimate</h2>
-            <p>Contact us today and receive a quote within 24 hours.</p>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Contact Details</h3>
-                <div class="contact-item">
-                    <span>📞</span>
-                    <div><strong>Phone:</strong> (555) 123-4567</div>
-                </div>
-                <div class="contact-item">
-                    <span>✉️</span>
-                    <div><strong>Email:</strong> info@procutlawncare.com</div>
-                </div>
-                <div class="contact-item">
-                    <span>📍</span>
-                    <div><strong>Service Area:</strong> Whitby, ON & Surrounding Areas</div>
-                </div>
-                <div class="contact-item">
-                    <span>⏰</span>
-                    <div><strong>Hours:</strong> Mon - Sat: 7:00 AM - 6:00 PM</div>
-                </div>
-            </div>
+    <!-- Contact & Quote Form -->
+    <section id="contact" class="py-24 bg-brandDark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-xs font-black text-leafGreen uppercase tracking-widest">Get In Touch</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-2">Request Your Free Quote</h2>
+                        <p class="text-slate-400 text-sm mt-2">Send us a message and we will text or call you back promptly!</p>
+                    </div>
 
-            <div class="contact-form">
-                <form onsubmit="alert('Thank you for requesting a quote! We will contact you soon.'); return false;">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" required placeholder="John Doe">
+                    <div class="space-y-4">
+                        <div class="p-4 bg-brandCard rounded-2xl border border-lawnGreen/30 flex items-center gap-4">
+                            <span class="text-2xl">📍</span>
+                            <div>
+                                <div class="text-xs font-bold text-slate-400 uppercase">Service Area</div>
+                                <div class="text-sm font-bold text-white">Whitby, Ontario & Surrounding Area</div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-brandCard rounded-2xl border border-lawnGreen/30 flex items-center gap-4">
+                            <span class="text-2xl">📱</span>
+                            <div>
+                                <div class="text-xs font-bold text-slate-400 uppercase">Phone / Text</div>
+                                <div class="text-sm font-bold text-white">(555) 123-MASS</div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-brandCard rounded-2xl border border-lawnGreen/30 flex items-center gap-4">
+                            <span class="text-2xl">🌐</span>
+                            <div>
+                                <div class="text-xs font-bold text-slate-400 uppercase">Original Canva Portfolio</div>
+                                <a href="https://massivelawn.my.canva.site" target="_blank" class="text-sm font-bold text-leafGreen hover:underline">massivelawn.my.canva.site</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" required placeholder="john@example.com">
+                </div>
+
+                <!-- Form Column -->
+                <div class="lg:col-span-7 bg-brandCard p-8 rounded-3xl border border-lawnGreen/40 shadow-2xl">
+                    <form onsubmit="handleQuoteSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1">Your Name *</label>
+                                <input type="text" required placeholder="Alex Smith" class="w-full bg-brandDark border border-lawnGreen/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-leafGreen">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1">Phone Number *</label>
+                                <input type="tel" required placeholder="(905) 555-0199" class="w-full bg-brandDark border border-lawnGreen/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-leafGreen">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1">Whitby Address *</label>
+                                <input type="text" required placeholder="123 Street Name, Whitby" class="w-full bg-brandDark border border-lawnGreen/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-leafGreen">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1">Needed Service</label>
+                                <select id="formServiceSelect" class="w-full bg-brandDark border border-lawnGreen/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-leafGreen">
+                                    <option value="mowing">Lawn Mowing & Edging</option>
+                                    <option value="aeration">Aeration Special</option>
+                                    <option value="cleanup">Seasonal Cleanup</option>
+                                    <option value="snow">Winter Snow Shovelling</option>
+                                    <option value="survey">Claim $5 Survey Discount</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-1">Property & Lawn Details</label>
+                            <textarea id="formNotes" rows="3" placeholder="Tell us about your lawn size, gate access, or driveway size..." class="w-full bg-brandDark border border-lawnGreen/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-leafGreen"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-leafGreen hover:bg-emerald-500 text-brandDark font-black text-sm shadow-xl transition-all">
+                            Send Request To Massive Lawncare
+                        </button>
+                    </form>
+
+                    <div id="formConfirmation" class="hidden mt-4 p-4 rounded-xl bg-lawnGreen/40 border border-leafGreen text-leafGreen text-xs text-center font-bold">
+                        ✓ Request sent! We will text or call you back shortly.
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" required placeholder="(555) 000-0000">
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Requested Service</label>
-                        <select id="service" required>
-                            <option value="">Select a service...</option>
-                            <option value="mowing">Lawn Mowing & Edging</option>
-                            <option value="fertilization">Fertilization & Weed Control</option>
-                            <option value="aeration">Aeration & Overseeding</option>
-                            <option value="cleanup">Seasonal Cleanup</option>
-                            <option value="other">Other / Custom</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Property Address & Details</label>
-                        <textarea id="message" placeholder="Please provide your address and any specific details about your yard..."></textarea>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%;">Send Request</button>
-                </form>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 ProCut Lawn Care. All rights reserved.</p>
+    <footer class="bg-[#0f0f0f] border-t border-lawnGreen/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                
+                <div class="flex items-center gap-4">
+                    <img src="massive_mowing_final_logo-removebg-preview.jpg" alt="Massive Lawncare Logo" class="h-12 w-auto logo-img" onerror="this.onerror=null; this.src='https://placehold.co/80x80/1a1a1a/4caf50?text=ML';">
+                    <div>
+                        <div class="text-lg font-black text-white">MASSIVE LAWNCARE</div>
+                        <div class="text-xs text-leafGreen italic font-serif">"Low Price, High Quality" • Whitby, Ontario</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold text-slate-400">
+                    <a href="#home" class="hover:text-white">Home</a>
+                    <a href="#services" class="hover:text-white">Services</a>
+                    <a href="#calculator" class="hover:text-white">Calculator</a>
+                    <a href="#about" class="hover:text-white">About Us</a>
+                    <a href="#contact" class="hover:text-white">Contact</a>
+                    <a href="https://massivelawn.my.canva.site" target="_blank" class="text-leafGreen hover:underline">Canva Site</a>
+                </div>
+
+                <div class="text-xs text-slate-500">
+                    &copy; 2026 Massive Lawncare. All Rights Reserved.
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Interactive Calculator
+        let currentMultiplier = 1;
+
+        function setSize(multiplier, btnElement) {
+            currentMultiplier = multiplier;
+            document.querySelectorAll('.calc-size-btn').forEach(b => {
+                b.className = "calc-size-btn py-3 px-2 text-center rounded-xl border border-lawnGreen/30 bg-brandDark text-slate-300 font-bold text-xs hover:border-lawnGreen";
+            });
+            btnElement.className = "calc-size-btn py-3 px-2 text-center rounded-xl border border-leafGreen bg-lawnGreen/30 text-white font-bold text-xs";
+            calculateEstimate();
+        }
+
+        function calculateEstimate() {
+            const service = document.getElementById('calcService').value;
+            const addon = document.getElementById('calcAddon').checked;
+
+            let baseMin = 20;
+            let baseMax = 30;
+
+            if (service === 'mowing-weekly') { baseMin = 20; baseMax = 30; }
+            if (service === 'mowing-biweekly') { baseMin = 25; baseMax = 35; }
+            if (service === 'aeration') { baseMin = 55; baseMax = 85; }
+            if (service === 'cleanup') { baseMin = 85; baseMax = 140; }
+            if (service === 'snow') { baseMin = 30; baseMax = 45; }
+
+            let min = Math.round(baseMin * currentMultiplier);
+            let max = Math.round(baseMax * currentMultiplier);
+
+            if (addon) {
+                min += 10;
+                max += 15;
+            }
+
+            document.getElementById('estimateOutput').innerText = `$${min} - $${max}`;
+        }
+
+        function useCalculatedEstimate() {
+            const val = document.getElementById('estimateOutput').innerText;
+            document.getElementById('formNotes').value = `Calculated Estimate: ${val} for property.`;
+        }
+
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            document.getElementById('formConfirmation').classList.remove('hidden');
+            e.target.reset();
+        }
+    </script>
 </body>
 </html>

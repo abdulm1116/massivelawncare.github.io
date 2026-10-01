@@ -28,6 +28,19 @@
   </script>
   <!-- FontAwesome for Social and UI Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  
+  <script>
+    // Helper function to handle image loading across different folder setups (root vs /media)
+    function handleImageError(img, primaryAltPath, fallbackUrl) {
+      if (!img.dataset.triedMedia) {
+        img.dataset.triedMedia = "true";
+        img.src = primaryAltPath;
+      } else {
+        img.onerror = null;
+        img.src = fallbackUrl;
+      }
+    }
+  </script>
 </head>
 <body class="bg-brand-bgLight text-brand-slate font-sans antialiased min-h-screen flex flex-col">
 
@@ -36,21 +49,21 @@
     <i class="fa-solid fa-location-dot mr-1"></i> Exclusively Serving Williamsburg, Whitby, Ontario &bull; Low Price, High Quality
   </div>
 
-  <!-- Header / Navigation -->
+  <!-- Header / Navigation (Logo Only) -->
   <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       
-      <!-- Header Logo -->
+      <!-- Header Logo Only -->
       <a href="#" class="flex items-center">
         <img 
           src="massive_mowing_final_logo-removebg-preview.jpg" 
           alt="Massive Lawncare Logo" 
           class="h-14 w-auto object-contain hover:scale-105 transition-transform duration-200"
-          onerror="this.onerror=null; this.src='https://placehold.co/180x70/16a34a/ffffff?text=Massive+Lawncare';"
+          onerror="handleImageError(this, 'media/massive_mowing_final_logo-removebg-preview.jpg', 'https://placehold.co/180x70/16a34a/ffffff?text=Massive+Lawncare');"
         />
       </a>
 
-      <!-- Quick Contact & Clean Social Media Icons (Header) -->
+      <!-- Quick Contact & Social Media Icons (Header) -->
       <div class="flex items-center space-x-3 md:space-x-4">
         <div class="hidden sm:flex items-center space-x-3 text-gray-600 mr-2">
           <a href="https://www.tiktok.com/@massive.lawncare" target="_blank" rel="noopener noreferrer" title="TikTok" class="hover:text-black transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
@@ -81,11 +94,11 @@
       </p>
       
       <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-        <a href="#quote" class="w-full sm:w-auto bg-brand-green hover:bg-brand-darkgreen text-white font-bold py-3.5 px-8 rounded-lg shadow transition-all text-center">
-          Request Free Quote
+        <a href="tel:+12892362654" class="w-full sm:w-auto bg-brand-green hover:bg-brand-darkgreen text-white font-bold py-3.5 px-8 rounded-lg shadow transition-all text-center">
+          <i class="fa-solid fa-phone mr-2"></i>Call or Text +1 (289)-236-2654
         </a>
-        <a href="tel:+12892362654" class="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 text-brand-slate font-bold py-3.5 px-8 rounded-lg transition-all text-center border border-gray-300">
-          Call/Text +1 (289)-236-2654
+        <a href="mailto:massivelawncare1@gmail.com" class="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 text-brand-slate font-bold py-3.5 px-8 rounded-lg transition-all text-center border border-gray-300">
+          <i class="fa-solid fa-envelope mr-2"></i>Email Us Directly
         </a>
       </div>
     </div>
@@ -108,7 +121,7 @@
         <p class="text-brand-gray text-sm flex-grow">Clean, precise mowing and sharp perimeter edging to keep your yard looking freshly manicured all season long.</p>
       </div>
 
-      <!-- Driveway & Pathway Shoveling (Highlighted Winter Service) -->
+      <!-- Driveway & Pathway Shoveling (Blue Highlight Outline) -->
       <div class="bg-brand-lightblue p-6 rounded-xl border-2 border-brand-blue shadow-md flex flex-col relative">
         <span class="absolute -top-3 right-4 bg-brand-blue text-white text-xs font-bold px-2.5 py-0.5 rounded-full shadow-sm">Winter Service</span>
         <div class="w-12 h-12 bg-blue-100 text-brand-blue rounded-lg flex items-center justify-center text-xl font-bold mb-4">
@@ -138,7 +151,7 @@
     </div>
   </section>
 
-  <!-- Our Work Showcase Section (9:16 TikTok Vertical Aspect Ratio) -->
+  <!-- Work Showcase Section (9:16 TikTok Vertical Aspect Ratio with Dual Path Error Fallbacks) -->
   <section id="work" class="py-12 bg-white border-y border-gray-200">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-8">
@@ -150,7 +163,12 @@
         <!-- Work Item 1 (9:16 Aspect Ratio) -->
         <div class="bg-brand-bgLight rounded-xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
           <div class="w-full aspect-[9/16] bg-slate-900 overflow-hidden">
-            <img src="mowing1.jpg" alt="Lawn Mowing Work" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/360x640/16a34a/ffffff?text=Lawn+Mowing+Photo';" />
+            <img 
+              src="media/mowing1.jpg" 
+              alt="Lawn Mowing Work" 
+              class="w-full h-full object-cover" 
+              onerror="handleImageError(this, 'mowing1.jpg', 'https://placehold.co/360x640/16a34a/ffffff?text=Lawn+Mowing+Photo');"
+            />
           </div>
           <div class="p-3 bg-white border-t border-gray-100">
             <p class="font-bold text-xs md:text-sm text-brand-slate">Lawn Mowing</p>
@@ -161,7 +179,12 @@
         <!-- Work Item 2 (9:16 Aspect Ratio) -->
         <div class="bg-brand-bgLight rounded-xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
           <div class="w-full aspect-[9/16] bg-slate-900 overflow-hidden">
-            <img src="cleanup1.jpg" alt="Yard Cleanup Work" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/360x640/16a34a/ffffff?text=Yard+Cleanup+Photo';" />
+            <img 
+              src="media/cleanup1.jpg" 
+              alt="Yard Cleanup Work" 
+              class="w-full h-full object-cover" 
+              onerror="handleImageError(this, 'cleanup1.jpg', 'https://placehold.co/360x640/16a34a/ffffff?text=Yard+Cleanup+Photo');"
+            />
           </div>
           <div class="p-3 bg-white border-t border-gray-100">
             <p class="font-bold text-xs md:text-sm text-brand-slate">Yard Cleanup</p>
@@ -172,7 +195,12 @@
         <!-- Work Item 3 (9:16 Aspect Ratio - Winter Service Highlight) -->
         <div class="bg-brand-lightblue rounded-xl border-2 border-brand-blue overflow-hidden shadow-sm flex flex-col">
           <div class="w-full aspect-[9/16] bg-slate-900 overflow-hidden">
-            <img src="shoveling1.jpg" alt="Driveway Shoveling Work" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/360x640/2563eb/ffffff?text=Shoveling+Photo';" />
+            <img 
+              src="media/shoveling1.jpg" 
+              alt="Driveway Shoveling Work" 
+              class="w-full h-full object-cover" 
+              onerror="handleImageError(this, 'shoveling1.jpg', 'https://placehold.co/360x640/2563eb/ffffff?text=Shoveling+Photo');"
+            />
           </div>
           <div class="p-3 bg-brand-lightblue border-t border-blue-100">
             <p class="font-bold text-xs md:text-sm text-brand-slate">Pathway Clearing</p>
@@ -180,10 +208,11 @@
           </div>
         </div>
 
-        <!-- Work Video Item (9:16 Vertical Video) -->
+        <!-- Work Video Item (9:16 Vertical Video with Source Fallback) -->
         <div class="bg-brand-bgLight rounded-xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
           <div class="w-full aspect-[9/16] bg-black overflow-hidden relative">
-            <video controls class="w-full h-full object-cover">
+            <video controls class="w-full h-full object-cover" id="workVideo">
+              <source src="media/work-video.mp4" type="video/mp4"/>
               <source src="work-video.mp4" type="video/mp4"/>
               Your browser does not support video playback.
             </video>
@@ -228,61 +257,45 @@
     </div>
   </section>
 
-  <!-- Quote & Contact Form Section -->
-  <section id="quote" class="py-12 md:py-16 max-w-4xl mx-auto px-4 w-full">
-    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-10 shadow-sm">
-      <div class="text-center mb-8">
-        <h2 class="text-2xl md:text-3xl font-extrabold text-brand-slate">Get a Free Quote</h2>
-        <p class="text-brand-gray text-sm md:text-base mt-1">Send us your details and we will reach out promptly</p>
-      </div>
+  <!-- Direct Contact Cards Section (Replaces Quote Form) -->
+  <section id="contact" class="py-12 md:py-16 max-w-4xl mx-auto px-4 w-full">
+    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-10 shadow-sm text-center">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-brand-slate mb-2">Get In Touch With Us</h2>
+      <p class="text-brand-gray text-sm md:text-base mb-8 max-w-xl mx-auto">
+        Serving residents across Williamsburg, Whitby, Ontario. Contact us directly for immediate quotes or scheduling!
+      </p>
 
-      <form action="mailto:massivelawncare1@gmail.com" method="post" enctype="text/plain" class="space-y-4">
-        <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-brand-gray mb-1">Your Name</label>
-          <input type="text" name="Name" required placeholder="John Doe" class="w-full bg-brand-bgLight border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green"/>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-brand-gray mb-1">Phone Number</label>
-            <input type="tel" name="Phone" required placeholder="+1 (289)-236-2654" class="w-full bg-brand-bgLight border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green"/>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <a href="tel:+12892362654" class="bg-brand-bgLight hover:bg-green-50 p-6 rounded-xl border border-gray-200 hover:border-brand-green transition-all flex flex-col items-center text-center group">
+          <div class="w-14 h-14 bg-brand-lightgreen text-brand-green rounded-full flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-phone"></i>
           </div>
-          <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-brand-gray mb-1">Street Address in Williamsburg</label>
-            <input type="text" name="Address" required placeholder="123 Williamsburg Rd, Whitby" class="w-full bg-brand-bgLight border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green"/>
+          <p class="text-xs font-bold uppercase tracking-wider text-brand-gray mb-1">Call or Text Direct</p>
+          <span class="text-lg md:text-xl font-extrabold text-brand-green">+1 (289)-236-2654</span>
+        </a>
+
+        <a href="mailto:massivelawncare1@gmail.com" class="bg-brand-bgLight hover:bg-green-50 p-6 rounded-xl border border-gray-200 hover:border-brand-green transition-all flex flex-col items-center text-center group">
+          <div class="w-14 h-14 bg-brand-lightgreen text-brand-green rounded-full flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-envelope"></i>
           </div>
-        </div>
-
-        <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-brand-gray mb-1">Services Needed</label>
-          <textarea name="Services_Requested" rows="3" required placeholder="Let us know if you need lawn mowing, driveway shoveling, or custom yard work..." class="w-full bg-brand-bgLight border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
-        </div>
-
-        <button type="submit" class="w-full bg-brand-green hover:bg-brand-darkgreen text-white font-bold py-3.5 rounded-lg shadow transition-all text-sm md:text-base">
-          Send Quote Request
-        </button>
-      </form>
-
-      <!-- Direct Contact Details -->
-      <div class="mt-8 pt-6 border-t border-gray-200 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-        <div class="bg-brand-bgLight p-4 rounded-lg">
-          <p class="text-xs font-bold uppercase text-brand-gray mb-1">Call or Text Direct</p>
-          <a href="tel:+12892362654" class="text-base font-extrabold text-brand-green hover:underline">+1 (289)-236-2654</a>
-        </div>
-        <div class="bg-brand-bgLight p-4 rounded-lg">
-          <p class="text-xs font-bold uppercase text-brand-gray mb-1">Email Us Directly</p>
-          <a href="mailto:massivelawncare1@gmail.com" class="text-base font-extrabold text-brand-green hover:underline">massivelawncare1@gmail.com</a>
-        </div>
+          <p class="text-xs font-bold uppercase tracking-wider text-brand-gray mb-1">Send Us an Email</p>
+          <span class="text-base md:text-lg font-extrabold text-brand-green break-all">massivelawncare1@gmail.com</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer (Logo Only) -->
   <footer class="bg-white border-t border-gray-200 py-8 mt-auto">
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
       
       <div class="flex items-center space-x-3">
-        <img src="massive_mowing_final_logo-removebg-preview.jpg" alt="Massive Lawncare Logo" class="h-10 w-auto object-contain" onerror="this.style.display='none';"/>
+        <img 
+          src="massive_mowing_final_logo-removebg-preview.jpg" 
+          alt="Massive Lawncare Logo" 
+          class="h-10 w-auto object-contain" 
+          onerror="handleImageError(this, 'media/massive_mowing_final_logo-removebg-preview.jpg', '');"
+        />
         <div>
           <p class="font-bold text-sm text-brand-slate">Massive Lawncare</p>
           <p class="text-xs text-brand-gray">Williamsburg, Whitby, Ontario &bull; High School Student Business</p>

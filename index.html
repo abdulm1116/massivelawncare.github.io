@@ -1,505 +1,296 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Massive Lawncare | Williamsburg, Whitby, Ontario</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            green: '#16a34a',
-                            darkgreen: '#15803d',
-                            lightgreen: '#f0fdf4',
-                            blue: '#2563eb',
-                            lightblue: '#eff6ff',
-                            slate: '#1e293b',
-                            muted: '#64748b'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Massive Lawncare | Williamsburg, Whitby, Ontario</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#16a34a',
+              darkgreen: '#15803d',
+              lightgreen: '#f0fdf4',
+              blue: '#2563eb',
+              lightblue: '#eff6ff',
+              slate: '#1e293b',
+              gray: '#64748b',
+              bgLight: '#f8fafc'
             }
+          }
         }
-    </script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+<body class="bg-brand-bgLight text-brand-slate font-sans antialiased min-h-screen flex flex-col">
 
-    <div class="bg-brand-green text-white px-4 py-2 font-bold text-center text-xs sm:text-sm uppercase tracking-wider shadow-sm">
-        <i class="fa-solid fa-location-dot mr-1"></i> Exclusively Serving Williamsburg, Whitby, Ontario
+  <!-- Top Announcement Bar -->
+  <div class="bg-brand-green text-white text-xs md:text-sm font-semibold py-2 px-4 text-center tracking-wide">
+    <i class="fa-solid fa-location-dot mr-1"></i> Exclusively Serving Williamsburg, Whitby, Ontario &bull; Low Price, High Quality
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <!-- Logo Only (No text beside logo) -->
+      <a href="#" class="flex items-center">
+        <img 
+          src="massive_mowing_final_logo-removebg-preview.jpg" 
+          alt="Massive Lawncare Logo" 
+          class="h-14 w-auto object-contain hover:scale-105 transition-transform duration-200"
+          onerror="this.onerror=null; this.src='https://via.placeholder.com/150x80?text=Massive+Lawncare';"
+        />
+      </a>
+
+      <!-- Quick Contact & Social Icons -->
+      <div class="flex items-center space-x-3 md:space-x-4">
+        <div class="hidden sm:flex items-center space-x-2 text-gray-500 mr-2">
+          <a href="#" title="TikTok" class="hover:text-black transition-colors text-lg"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" title="Instagram" class="hover:text-pink-600 transition-colors text-lg"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" title="Facebook" class="hover:text-blue-600 transition-colors text-lg"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" title="Google Reviews" class="hover:text-amber-500 transition-colors text-lg"><i class="fa-brands fa-google"></i></a>
+        </div>
+        <a href="tel:+12892362654" class="bg-brand-green hover:bg-brand-darkgreen text-white text-xs md:text-sm font-bold py-2 px-3 md:px-4 rounded-lg shadow-sm transition-all flex items-center space-x-2">
+          <i class="fa-solid fa-phone"></i>
+          <span class="hidden xs:inline">Call/Text Us</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-white border-b border-gray-200 py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <span class="inline-block bg-brand-lightgreen text-brand-green font-bold text-xs md:text-sm px-3 py-1 rounded-full border border-green-200 mb-4">
+        Local High School Students &bull; Williamsburg Exclusive
+      </span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-brand-slate tracking-tight mb-4">
+        Low Price, High Quality Lawn & Winter Services
+      </h1>
+      <p class="text-base md:text-lg text-brand-gray mb-8 max-w-2xl mx-auto">
+        We are local high school students providing honest, hardworking lawn maintenance and pathway shoveling specifically for our neighbors in Williamsburg, Whitby, Ontario.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="#quote" class="w-full sm:w-auto bg-brand-green hover:bg-brand-darkgreen text-white font-bold py-3.5 px-8 rounded-lg shadow transition-all text-center">
+          Request Free Quote
+        </a>
+        <a href="tel:+12892362654" class="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 text-brand-slate font-bold py-3.5 px-8 rounded-lg transition-all text-center border border-gray-300">
+          Call/Text +1 (289)-236-2654
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-12 md:py-16 max-w-6xl mx-auto px-4 w-full">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-brand-slate">Our Neighborhood Services</h2>
+      <p class="text-brand-gray text-sm md:text-base mt-2">Dependable yard care and snow removal for Williamsburg residents</p>
     </div>
 
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 text-slate-800 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- Logo ONLY (No text beside it) -->
-                <a href="#" class="flex items-center group focus:outline-none">
-                    <img src="massive_mowing_final_logo-removebg-preview.jpg" 
-                         alt="Massive Lawncare Logo" 
-                         class="h-16 w-auto object-contain transition-transform group-hover:scale-105"
-                         onerror="this.onerror=null; this.src='https://placehold.co/200x200/ffffff/16a34a?text=Massive+Lawncare'">
-                </a>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Lawn Mowing -->
+      <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+        <div class="w-12 h-12 bg-brand-lightgreen text-brand-green rounded-lg flex items-center justify-center text-xl font-bold mb-4">
+          <i class="fa-solid fa-scissors"></i>
+        </div>
+        <h3 class="text-lg font-bold text-brand-slate mb-2">Lawn Mowing & Edging</h3>
+        <p class="text-brand-gray text-sm flex-grow">Clean, precise mowing and sharp perimeter edging to keep your yard looking freshly manicured all season long.</p>
+      </div>
 
-                <!-- Navigation Links -->
-                <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-700">
-                    <a href="#about" class="hover:text-brand-green transition-colors">About Us</a>
-                    <a href="#services" class="hover:text-brand-green transition-colors">Services</a>
-                    <a href="#work" class="hover:text-brand-green transition-colors">Our Work</a>
-                    <a href="#contact" class="hover:text-brand-green transition-colors">Contact</a>
-                </nav>
+      <!-- Driveway & Pathway Shoveling (Blue Highlight Outline) -->
+      <div class="bg-brand-lightblue p-6 rounded-xl border-2 border-brand-blue shadow-md flex flex-col relative">
+        <span class="absolute -top-3 right-4 bg-brand-blue text-white text-xs font-bold px-2.5 py-0.5 rounded-full">Winter Service</span>
+        <div class="w-12 h-12 bg-blue-100 text-brand-blue rounded-lg flex items-center justify-center text-xl font-bold mb-4">
+          <i class="fa-solid fa-snowflake"></i>
+        </div>
+        <h3 class="text-lg font-bold text-brand-slate mb-2">Driveway & Pathway Shoveling</h3>
+        <p class="text-brand-gray text-sm flex-grow">Reliable snow clearing for driveways, front walkways, and porches so you never get snowed in.</p>
+      </div>
 
-                <!-- Action Button -->
-                <div class="hidden md:flex items-center space-x-3">
-                    <a href="tel:+12892362654" class="bg-brand-green hover:bg-brand-darkgreen text-white px-5 py-2.5 rounded-xl text-sm font-bold flex items-center shadow-md transition-all">
-                        <i class="fa-solid fa-phone mr-2 text-xs"></i> +1 (289)-236-2654
-                    </a>
-                </div>
+      <!-- Yard Cleanup -->
+      <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+        <div class="w-12 h-12 bg-brand-lightgreen text-brand-green rounded-lg flex items-center justify-center text-xl font-bold mb-4">
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+        <h3 class="text-lg font-bold text-brand-slate mb-2">Yard Cleanup & Raking</h3>
+        <p class="text-brand-gray text-sm flex-grow">Seasonal leaf raking, bag loading, twig pick-up, and general property tidy-ups.</p>
+      </div>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" type="button" class="text-slate-700 hover:text-brand-green p-2 focus:outline-none" aria-label="Toggle menu">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
+      <!-- Misc Services -->
+      <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+        <div class="w-12 h-12 bg-brand-lightgreen text-brand-green rounded-lg flex items-center justify-center text-xl font-bold mb-4">
+          <i class="fa-solid fa-toolbox"></i>
+        </div>
+        <h3 class="text-lg font-bold text-brand-slate mb-2">Misc Yard Services</h3>
+        <p class="text-brand-gray text-sm flex-grow">Have a custom outdoor task? We assist with weeding, mulch spreading, branch hauling, and heavy lifting.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Our Work Showcase Section (No file uploader, clean grid) -->
+  <section id="work" class="py-12 bg-white border-y border-gray-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-brand-slate">Our Work in Williamsburg</h2>
+        <p class="text-brand-gray text-sm md:text-base mt-1">Real photos and videos from our local jobs in Whitby, Ontario</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Work Item 1 -->
+        <div class="bg-brand-bgLight rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+          <img src="media/mowing1.jpg" alt="Lawn Mowing Work" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Lawn+Mowing+Photo';"/>
+          <div class="p-3">
+            <p class="font-bold text-sm text-brand-slate">Lawn Mowing & Edging</p>
+            <p class="text-xs text-brand-gray">Williamsburg, Whitby</p>
+          </div>
         </div>
 
-        <!-- Mobile Menu Popup -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-lg">
-            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">About Us</a>
-            <a href="#services" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">Services</a>
-            <a href="#work" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">Our Work</a>
-            <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">Contact</a>
-            <div class="pt-2 space-y-2">
-                <a href="tel:+12892362654" class="block text-center bg-brand-green text-white px-4 py-3 rounded-xl font-bold shadow">
-                    <i class="fa-solid fa-phone mr-2"></i> Call: +1 (289)-236-2654
-                </a>
-                <a href="mailto:massivelawncare1@gmail.com" class="block text-center bg-slate-100 text-slate-800 px-4 py-3 rounded-xl font-bold border border-slate-200">
-                    <i class="fa-solid fa-envelope mr-2"></i> Email Us
-                </a>
-            </div>
+        <!-- Work Item 2 -->
+        <div class="bg-brand-bgLight rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+          <img src="media/cleanup1.jpg" alt="Yard Cleanup Work" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Yard+Cleanup+Photo';"/>
+          <div class="p-3">
+            <p class="font-bold text-sm text-brand-slate">Yard Cleanup</p>
+            <p class="text-xs text-brand-gray">Williamsburg, Whitby</p>
+          </div>
         </div>
-    </header>
 
-    <main class="flex-grow">
-        <section class="bg-gradient-to-b from-white via-brand-lightgreen/30 to-slate-50 py-16 lg:py-24 border-b border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="max-w-3xl mx-auto space-y-6">
-                    
-                    <div class="inline-flex items-center space-x-2 bg-brand-lightgreen border border-brand-green/30 rounded-full px-4 py-1.5 text-xs font-bold text-brand-darkgreen uppercase tracking-wide">
-                        <i class="fa-solid fa-graduation-cap text-sm"></i>
-                        <span>High School Students • Williamsburg, Whitby, Ontario</span>
-                    </div>
-                    
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight uppercase leading-tight">
-                        Massive <span class="text-brand-green">Lawncare</span>
-                    </h1>
-                    
-                    <p class="text-xl sm:text-2xl font-bold italic text-brand-darkgreen tracking-wide">
-                        "Low Price, High Quality"
-                    </p>
-                    
-                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed">
-                        Local high school students dedicated to reliable, affordable, and top-tier lawn care and property upkeep. No fake online estimate bots or corporate fluff — just honest work for our Williamsburg neighbors.
-                    </p>
-
-                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-brand-green hover:bg-brand-darkgreen text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all text-center flex items-center justify-center">
-                            <i class="fa-solid fa-paper-plane mr-2"></i> Request a Fast Quote
-                        </a>
-                        <a href="tel:+12892362654" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 border-2 border-slate-300 text-slate-800 font-bold rounded-xl transition-all text-center flex items-center justify-center">
-                            <i class="fa-solid fa-phone mr-2 text-brand-green"></i> Call or Text Us
-                        </a>
-                    </div>
-
-                    <div class="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 font-semibold">
-                        <span class="flex items-center"><i class="fa-solid fa-circle-check text-brand-green mr-1.5"></i> Williamsburg Only</span>
-                        <span class="flex items-center"><i class="fa-solid fa-circle-check text-brand-green mr-1.5"></i> Student-Driven Pricing</span>
-                        <span class="flex items-center"><i class="fa-solid fa-circle-check text-brand-green mr-1.5"></i> Quick Direct Responses</span>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="py-10 bg-white border-b border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="max-w-3xl mx-auto space-y-3">
-                    <span class="bg-brand-lightgreen text-brand-darkgreen px-3 py-1 text-xs font-bold rounded-full uppercase tracking-wider border border-brand-green/20">
-                        Strict Service Area
-                    </span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Exclusively Serving Williamsburg, Whitby, Ontario</h2>
-                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        To guarantee punctual service and keep our rates as low as possible for our neighbors, we limit our service strictly to homes within the <strong>Williamsburg neighborhood</strong> in Whitby, Ontario.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="py-16 bg-slate-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    
-                    <div class="space-y-5">
-                        <span class="px-3 py-1 bg-brand-lightgreen text-brand-darkgreen text-xs font-bold rounded-full uppercase tracking-wider border border-brand-green/20">
-                            Who We Are
-                        </span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                            Local High School Student Work Ethic
-                        </h2>
-                        <p class="text-slate-600 leading-relaxed text-base">
-                            We are high school students living right here in Whitby, operating <strong>Massive Lawncare</strong> to provide Williamsburg residents with dependable yard maintenance at student-friendly rates.
-                        </p>
-                        <p class="text-slate-600 leading-relaxed text-base">
-                            By choosing us, you support hardworking local youth while getting a clean lawn, sharp edges, or a cleared driveway without paying high corporate contractor markups.
-                        </p>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                            <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                                <i class="fa-solid fa-hands-holding-child text-brand-green text-2xl mb-2"></i>
-                                <h3 class="font-bold text-slate-900 text-sm">Community Focused</h3>
-                                <p class="text-xs text-slate-500 mt-1">Living in Williamsburg means we're always nearby and easy to reach.</p>
-                            </div>
-                            <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                                <i class="fa-solid fa-tag text-brand-green text-2xl mb-2"></i>
-                                <h3 class="font-bold text-slate-900 text-sm">Low Price Guarantee</h3>
-                                <p class="text-xs text-slate-500 mt-1">High quality lawn work at fair, transparent rates.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm space-y-6">
-                        <h3 class="text-xl font-bold text-slate-900 flex items-center">
-                            <i class="fa-solid fa-shield-halved text-brand-green mr-2"></i>
-                            The Massive Lawncare Promise
-                        </h3>
-                        
-                        <ul class="space-y-4 text-sm text-slate-600">
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-check text-brand-green mt-1 mr-3"></i>
-                                <span><strong>Direct Communication:</strong> Speak directly with us via phone or email — no automated call centers or quote bots.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-check text-brand-green mt-1 mr-3"></i>
-                                <span><strong>Clean Property Finish:</strong> We always blow off driveways and walkways after mowing and trimming.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-check text-brand-green mt-1 mr-3"></i>
-                                <span><strong>All Seasons Covered:</strong> Summer lawn mowing and winter driveway shoveling for Williamsburg homes.</span>
-                            </li>
-                        </ul>
-
-                        <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-                            <div>
-                                <p class="text-xs font-bold text-slate-500 uppercase">Direct Line</p>
-                                <a href="tel:+12892362654" class="text-lg font-black text-brand-green hover:underline">+1 (289)-236-2654</a>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold text-slate-500 uppercase">Direct Email</p>
-                                <a href="mailto:massivelawncare1@gmail.com" class="text-sm font-bold text-slate-800 hover:underline">massivelawncare1@gmail.com</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="py-16 bg-white border-t border-b border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="px-3 py-1 bg-brand-lightgreen text-brand-darkgreen text-xs font-bold rounded-full uppercase tracking-wider border border-brand-green/20">
-                        Our Services
-                    </span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">What We Do For Your Property</h2>
-                    <p class="text-slate-600 mt-2 text-base">Simple, reliable outdoor services tailored specifically for Williamsburg homeowners.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    
-                    <!-- Lawn Mowing & Edging Card -->
-                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="w-12 h-12 bg-brand-lightgreen text-brand-darkgreen rounded-xl flex items-center justify-center text-xl font-bold border border-brand-green/30">
-                                    <i class="fa-solid fa-scissors"></i>
-                                </div>
-                                <span class="bg-brand-lightgreen text-brand-darkgreen text-xs font-bold px-3 py-1 rounded-full uppercase">Lawn Care</span>
-                            </div>
-                            <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Lawn Mowing & Edging</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                Regular lawn cutting, weed trimming around fences and decks, and crisp edging along driveways, walkways, and garden beds.
-                            </p>
-                        </div>
-                        <ul class="text-xs font-semibold text-slate-500 space-y-2 border-t border-slate-200 pt-4">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Weekly or bi-weekly scheduling</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Clippings blown off hard surfaces</li>
-                        </ul>
-                    </div>
-
-                    <!-- Driveway & Pathway Shoveling Card (BOLD BLUE OUTLINE & BLUE BADGE) -->
-                    <div class="bg-brand-lightblue/40 rounded-2xl p-8 border-2 border-brand-blue shadow-md flex flex-col justify-between relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-brand-blue text-white text-[10px] font-black uppercase tracking-widest px-4 py-1 rounded-bl-xl shadow-sm">
-                            Winter Service
-                        </div>
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="w-12 h-12 bg-brand-blue text-white rounded-xl flex items-center justify-center text-xl font-bold shadow-sm">
-                                    <i class="fa-solid fa-snowflake"></i>
-                                </div>
-                                <span class="bg-blue-100 text-brand-blue text-xs font-bold px-3 py-1 rounded-full uppercase border border-blue-200">Winter Shoveling</span>
-                            </div>
-                            <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Driveway & Pathway Shoveling</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                Prompt snow clearing for driveways, front walkways, side paths, and front steps during snowstorms to keep your home safe and accessible.
-                            </p>
-                        </div>
-                        <ul class="text-xs font-semibold text-slate-600 space-y-2 border-t border-blue-200 pt-4">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Reliable neighborhood response</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brand-blue mr-2"></i> Driveways, porch steps, and walkways</li>
-                        </ul>
-                    </div>
-
-                    <!-- Yard Cleanup & Leaf Raking Card -->
-                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="w-12 h-12 bg-brand-lightgreen text-brand-darkgreen rounded-xl flex items-center justify-center text-xl font-bold border border-brand-green/30">
-                                    <i class="fa-solid fa-broom"></i>
-                                </div>
-                                <span class="bg-brand-lightgreen text-brand-darkgreen text-xs font-bold px-3 py-1 rounded-full uppercase">Cleanup</span>
-                            </div>
-                            <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Yard Cleanup & Leaf Raking</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                Seasonal spring or fall cleanups, leaf raking, branch gathering, and lawn debris bagging to keep your lawn looking neat year-round.
-                            </p>
-                        </div>
-                        <ul class="text-xs font-semibold text-slate-500 space-y-2 border-t border-slate-200 pt-4">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Spring & Fall leaf removal</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Yard waste bagged cleanly</li>
-                        </ul>
-                    </div>
-
-                    <!-- Miscellaneous Yard Services Card -->
-                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="w-12 h-12 bg-brand-lightgreen text-brand-darkgreen rounded-xl flex items-center justify-center text-xl font-bold border border-brand-green/30">
-                                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                                </div>
-                                <span class="bg-brand-lightgreen text-brand-darkgreen text-xs font-bold px-3 py-1 rounded-full uppercase">Custom Jobs</span>
-                            </div>
-                            <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Miscellaneous Yard Services</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                Need help with odd outdoor jobs? We offer custom yard assistance including weeding, mulch spreading, branch hauling, heavy lifting, and patio sweeping.
-                            </p>
-                        </div>
-                        <ul class="text-xs font-semibold text-slate-500 space-y-2 border-t border-slate-200 pt-4">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Custom outdoor chores</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brand-green mr-2"></i> Flexible hourly or job-based quotes</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="work" class="py-16 bg-slate-50 border-b border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-10">
-                    <span class="px-3 py-1 bg-brand-lightgreen text-brand-darkgreen text-xs font-bold rounded-full uppercase tracking-wider border border-brand-green/20">
-                        Work Showcase
-                    </span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Our Work in Williamsburg</h2>
-                    <p class="text-slate-600 mt-2 text-sm sm:text-base">A look at our lawn care and winter shoveling work right here in the neighborhood.</p>
-                </div>
-
-                <!-- Showcase Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    
-                    <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
-                        <div class="h-56 bg-slate-200 overflow-hidden relative flex items-center justify-center">
-                            <i class="fa-solid fa-image text-4xl text-slate-400"></i>
-                            <div class="absolute inset-0 bg-brand-green/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                        <div class="p-4">
-                            <span class="text-[10px] font-bold text-brand-green uppercase tracking-wider">Lawn Mowing</span>
-                            <h4 class="font-bold text-slate-900 text-sm">Clean Cut & Crisp Edging</h4>
-                            <p class="text-xs text-slate-500 mt-1">Williamsburg Front Lawn</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
-                        <div class="h-56 bg-slate-200 overflow-hidden relative flex items-center justify-center">
-                            <i class="fa-solid fa-snowflake text-4xl text-brand-blue/50"></i>
-                            <div class="absolute inset-0 bg-brand-blue/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                        <div class="p-4">
-                            <span class="text-[10px] font-bold text-brand-blue uppercase tracking-wider">Winter Shoveling</span>
-                            <h4 class="font-bold text-slate-900 text-sm">Cleared Driveway & Walkway</h4>
-                            <p class="text-xs text-slate-500 mt-1">Williamsburg Snow Clearing</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
-                        <div class="h-56 bg-slate-200 overflow-hidden relative flex items-center justify-center">
-                            <i class="fa-solid fa-leaf text-4xl text-slate-400"></i>
-                            <div class="absolute inset-0 bg-brand-green/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                        <div class="p-4">
-                            <span class="text-[10px] font-bold text-brand-green uppercase tracking-wider">Yard Cleanup</span>
-                            <h4 class="font-bold text-slate-900 text-sm">Seasonal Raking & Bagging</h4>
-                            <p class="text-xs text-slate-500 mt-1">Williamsburg Backyard</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section id="contact" class="py-16 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    
-                    <div class="lg:col-span-5 space-y-6">
-                        <span class="px-3 py-1 bg-brand-lightgreen text-brand-darkgreen text-xs font-bold rounded-full uppercase tracking-wider border border-brand-green/20">
-                            Get In Touch
-                        </span>
-                        <h2 class="text-3xl font-extrabold text-slate-900">Request Your Free Fast Quote</h2>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Contact us directly by phone, text, email, or by filling out this quick form. Since we live in Williamsburg, we can drop by quickly to provide an exact price!
-                        </p>
-
-                        <div class="space-y-4 pt-2">
-                            <!-- Call/Text Card -->
-                            <a href="tel:+12892362654" class="flex items-center p-4 bg-brand-lightgreen rounded-2xl border border-brand-green/30 hover:border-brand-green transition shadow-sm">
-                                <div class="w-12 h-12 bg-brand-green text-white rounded-xl flex items-center justify-center text-xl font-bold shadow">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                                <div class="ml-4">
-                                    <p class="text-xs font-bold text-slate-500 uppercase">Call or Text Us</p>
-                                    <p class="text-lg font-black text-slate-900">+1 (289)-236-2654</p>
-                                </div>
-                            </a>
-
-                            <!-- Email Card -->
-                            <a href="mailto:massivelawncare1@gmail.com" class="flex items-center p-4 bg-slate-50 rounded-2xl border border-slate-200 hover:border-slate-300 transition shadow-sm">
-                                <div class="w-12 h-12 bg-slate-800 text-white rounded-xl flex items-center justify-center text-xl font-bold shadow">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <div class="ml-4">
-                                    <p class="text-xs font-bold text-slate-500 uppercase">Email Us</p>
-                                    <p class="text-base font-bold text-slate-900">massivelawncare1@gmail.com</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Direct Quote Form -->
-                    <div class="lg:col-span-7 bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
-                        <h3 class="text-2xl font-extrabold text-slate-900 mb-1">Send A Message</h3>
-                        <p class="text-slate-500 text-xs mb-6">Serving Williamsburg, Whitby, Ontario exclusively.</p>
-
-                        <form action="https://formsubmit.co/massivelawncare1@gmail.com" method="POST" class="space-y-4">
-                            <!-- FormSubmit Configuration -->
-                            <input type="hidden" name="_subject" value="New Quote Request - Massive Lawncare">
-                            <input type="hidden" name="_captcha" value="false">
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name *</label>
-                                    <input type="text" name="Name" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-green outline-none bg-white" placeholder="Full Name">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Number *</label>
-                                    <input type="tel" name="Phone" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-green outline-none bg-white" placeholder="+1 (289)-236-2654">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Williamsburg Address *</label>
-                                <input type="text" name="Address" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-green outline-none bg-white" placeholder="Street Address in Williamsburg, Whitby">
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Requested Service</label>
-                                <select name="Service" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-green outline-none bg-white">
-                                    <option>Lawn Mowing & Edging</option>
-                                    <option>Driveway & Pathway Shoveling</option>
-                                    <option>Yard Cleanup & Leaf Raking</option>
-                                    <option>Miscellaneous Yard Services</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Details / Property Notes</label>
-                                <textarea name="Message" rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-green outline-none bg-white" placeholder="Tell us about your property size, gate access, or specific needs..."></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full py-4 bg-brand-green hover:bg-brand-darkgreen text-white font-bold rounded-xl shadow-md transition text-center">
-                                Submit Quote Request
-                            </button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-white border-t border-slate-200 py-10 text-slate-600">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-            <div class="flex items-center justify-center space-x-3">
-                <img src="massive_mowing_final_logo-removebg-preview.jpg" 
-                     alt="Massive Lawncare Logo" 
-                     class="h-12 w-auto object-contain"
-                     onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/16a34a?text=Logo'">
-            </div>
-            <p class="text-brand-darkgreen font-serif italic text-base font-bold">"Low Price, High Quality"</p>
-            <p class="text-xs text-slate-500 font-semibold">High School Student Owned & Operated • Williamsburg, Whitby, Ontario</p>
-            
-            <div class="flex justify-center items-center space-x-6 text-xs font-bold text-slate-700 pt-2">
-                <a href="tel:+12892362654" class="hover:text-brand-green"><i class="fa-solid fa-phone mr-1"></i> +1 (289)-236-2654</a>
-                <a href="mailto:massivelawncare1@gmail.com" class="hover:text-brand-green"><i class="fa-solid fa-envelope mr-1"></i> massivelawncare1@gmail.com</a>
-            </div>
-
-            <p class="text-xs text-slate-400 pt-4 border-t border-slate-100">&copy; <span id="year"></span> Massive Lawncare. Ready for GitHub Pages hosting.</p>
+        <!-- Work Item 3 -->
+        <div class="bg-brand-bgLight rounded-lg border-2 border-brand-blue overflow-hidden shadow-sm">
+          <img src="media/shoveling1.jpg" alt="Driveway Shoveling Work" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Pathway+Shoveling+Photo';"/>
+          <div class="p-3 bg-brand-lightblue">
+            <p class="font-bold text-sm text-brand-slate">Pathway & Driveway Clearing</p>
+            <p class="text-xs text-brand-gray">Williamsburg, Whitby</p>
+          </div>
         </div>
-    </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        <!-- Work Video Item -->
+        <div class="bg-brand-bgLight rounded-lg border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
+          <video controls class="w-full h-48 object-cover bg-black" poster="https://via.placeholder.com/400x300?text=Work+Video+Preview">
+            <source src="media/work-video.mp4" type="video/mp4"/>
+            Your browser does not support video play.
+          </video>
+          <div class="p-3">
+            <p class="font-bold text-sm text-brand-slate">Job Clip Video</p>
+            <p class="text-xs text-brand-gray">Williamsburg, Whitby</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Mobile navbar menu toggle
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+  <!-- Social Media & Google Reviews Section -->
+  <section class="py-10 bg-brand-bgLight border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-extrabold text-brand-slate mb-2">Connect With Us & Read Reviews</h2>
+      <p class="text-brand-gray text-sm mb-6">Follow our work on social media or leave us feedback on Google!</p>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
+        <a href="#" target="_blank" class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col items-center">
+          <i class="fa-brands fa-tiktok text-2xl text-black mb-2"></i>
+          <span class="font-bold text-xs md:text-sm text-brand-slate">TikTok</span>
+        </a>
+        <a href="#" target="_blank" class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col items-center">
+          <i class="fa-brands fa-instagram text-2xl text-pink-600 mb-2"></i>
+          <span class="font-bold text-xs md:text-sm text-brand-slate">Instagram</span>
+        </a>
+        <a href="#" target="_blank" class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col items-center">
+          <i class="fa-brands fa-facebook text-2xl text-blue-600 mb-2"></i>
+          <span class="font-bold text-xs md:text-sm text-brand-slate">Facebook</span>
+        </a>
+        <a href="#" target="_blank" class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col items-center">
+          <i class="fa-brands fa-google text-2xl text-amber-500 mb-2"></i>
+          <span class="font-bold text-xs md:text-sm text-brand-slate">Google Reviews</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        });
-    </script>
+  <!-- Quote & Contact Section -->
+  <section id="quote" class="py-12 md:py-16 max-w-4xl mx-auto px-4 w-full">
+    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-10 shadow-sm">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-brand-slate">Get a Free Quote</h2>
+        <p class="text-brand-gray text-sm md:text-base mt-1">Send us your details and we will reach out promptly</p>
+      </div>
+
+      <form action="mailto:massivelawncare1@gmail.com" method="post" enctype="text/plain" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-brand-gray mb-1">Your Name</label>
+          <input type="text" name="Name" required placeholder="John Doe" class="w-full bg-brand-bgLight border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green"/>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-brand-gray mb-1">Phone Number</label>
+            <input type="tel" name="Phone" required placeholder="+1 (289)-236-2654" class="w-full bg-brand-bgLight border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green"/>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-brand-gray mb-1">Street Address in Williamsburg</label>
+            <input type="text" name="Address" required placeholder="123 Williamsburg Rd, Whitby" class="w-full bg-brand-bgLight border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green"/>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-brand-gray mb-1">Services Needed</label>
+          <textarea name="Services_Requested" rows="3" required placeholder="Let us know if you need lawn mowing, driveway shoveling, or custom yard work..." class="w-full bg-brand-bgLight border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-brand-green hover:bg-brand-darkgreen text-white font-bold py-3.5 rounded-lg shadow transition-all text-sm md:text-base">
+          Send Quote Request
+        </button>
+      </form>
+
+      <!-- Direct Contact Details -->
+      <div class="mt-8 pt-6 border-t border-gray-200 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+        <div class="bg-brand-bgLight p-4 rounded-lg">
+          <p class="text-xs font-bold uppercase text-brand-gray mb-1">Call or Text Direct</p>
+          <a href="tel:+12892362654" class="text-base font-extrabold text-brand-green hover:underline">+1 (289)-236-2654</a>
+        </div>
+        <div class="bg-brand-bgLight p-4 rounded-lg">
+          <p class="text-xs font-bold uppercase text-brand-gray mb-1">Email Us Directly</p>
+          <a href="mailto:massivelawncare1@gmail.com" class="text-base font-extrabold text-brand-green hover:underline">massivelawncare1@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-8 mt-auto">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+      
+      <div class="flex items-center space-x-3">
+        <img src="massive_mowing_final_logo-removebg-preview.jpg" alt="Massive Lawncare Logo" class="h-10 w-auto object-contain" onerror="this.style.display='none';"/>
+        <div>
+          <p class="font-bold text-sm text-brand-slate">Massive Lawncare</p>
+          <p class="text-xs text-brand-gray">Williamsburg, Whitby, Ontario &bull; High School Student Business</p>
+        </div>
+      </div>
+
+      <!-- Social Links in Footer -->
+      <div class="flex items-center space-x-4 text-gray-500">
+        <a href="https://www.tiktok.com/@massive.lawncare" title="TikTok" class="hover:text-black transition-colors"><i class="fa-brands fa-tiktok text-lg"></i></a>
+        <a href="https://www.instagram.com/massivelawncare/" title="Instagram" class="hover:text-pink-600 transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61579170967806&locale=fr_CA" title="Facebook" class="hover:text-blue-600 transition-colors"><i class="fa-brands fa-facebook text-lg"></i></a>
+        <a href="https://share.google/9PRlIHuJycxWxng1Y" title="Google Reviews" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-google text-lg"></i></a>
+      </div>
+
+      <p class="text-xs text-brand-gray">
+        &copy; Massive Lawncare. Low Price, High Quality.
+      </p>
+
+    </div>
+  </footer>
+
 </body>
 </html>

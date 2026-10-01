@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Massive Lawncare | Williamsburg, Whitby, Ontario</title>
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -25,6 +26,7 @@
       }
     }
   </script>
+  <!-- FontAwesome for Social and UI Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body class="bg-brand-bgLight text-brand-slate font-sans antialiased min-h-screen flex flex-col">
@@ -38,27 +40,27 @@
   <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       
-      <!-- Logo Only (No text beside logo) -->
+      <!-- Header Logo -->
       <a href="#" class="flex items-center">
         <img 
           src="massive_mowing_final_logo-removebg-preview.jpg" 
           alt="Massive Lawncare Logo" 
           class="h-14 w-auto object-contain hover:scale-105 transition-transform duration-200"
-          onerror="this.onerror=null; this.src='https://via.placeholder.com/150x80?text=Massive+Lawncare';"
+          onerror="this.onerror=null; this.src='https://placehold.co/180x70/16a34a/ffffff?text=Massive+Lawncare';"
         />
       </a>
 
-      <!-- Quick Contact & Social Icons -->
+      <!-- Quick Contact & Clean Social Media Icons (Header) -->
       <div class="flex items-center space-x-3 md:space-x-4">
-        <div class="hidden sm:flex items-center space-x-2 text-gray-500 mr-2">
-          <a href="#" title="TikTok" class="hover:text-black transition-colors text-lg"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="#" title="Instagram" class="hover:text-pink-600 transition-colors text-lg"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" title="Facebook" class="hover:text-blue-600 transition-colors text-lg"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" title="Google Reviews" class="hover:text-amber-500 transition-colors text-lg"><i class="fa-brands fa-google"></i></a>
+        <div class="hidden sm:flex items-center space-x-3 text-gray-600 mr-2">
+          <a href="https://www.tiktok.com/@massive.lawncare" target="_blank" rel="noopener noreferrer" title="TikTok" class="hover:text-black transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/massivelawncare/" target="_blank" rel="noopener noreferrer" title="Instagram" class="hover:text-pink-600 transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61579170967806&locale=fr_CA" target="_blank" rel="noopener noreferrer" title="Facebook" class="hover:text-blue-600 transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://share.google/9PR1IHuJycWxng1Y" target="_blank" rel="noopener noreferrer" title="Google Reviews" class="hover:text-amber-500 transition-colors text-xl"><i class="fa-brands fa-google"></i></a>
         </div>
-        <a href="tel:+12892362654" class="bg-brand-green hover:bg-brand-darkgreen text-white text-xs md:text-sm font-bold py-2 px-3 md:px-4 rounded-lg shadow-sm transition-all flex items-center space-x-2">
+        <a href="tel:+12892362654" class="bg-brand-green hover:bg-brand-darkgreen text-white text-xs md:text-sm font-bold py-2.5 px-4 rounded-lg shadow-sm transition-all flex items-center space-x-2">
           <i class="fa-solid fa-phone"></i>
-          <span class="hidden xs:inline">Call/Text Us</span>
+          <span>Call/Text Us</span>
         </a>
       </div>
 
@@ -68,7 +70,7 @@
   <!-- Hero Section -->
   <section class="bg-white border-b border-gray-200 py-12 md:py-16">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <span class="inline-block bg-brand-lightgreen text-brand-green font-bold text-xs md:text-sm px-3 py-1 rounded-full border border-green-200 mb-4">
+      <span class="inline-block bg-brand-lightgreen text-brand-green font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-full border border-green-200 mb-4">
         Local High School Students &bull; Williamsburg Exclusive
       </span>
       <h1 class="text-3xl md:text-5xl font-extrabold text-brand-slate tracking-tight mb-4">
@@ -97,7 +99,6 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      
       <!-- Lawn Mowing -->
       <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col">
         <div class="w-12 h-12 bg-brand-lightgreen text-brand-green rounded-lg flex items-center justify-center text-xl font-bold mb-4">
@@ -107,9 +108,9 @@
         <p class="text-brand-gray text-sm flex-grow">Clean, precise mowing and sharp perimeter edging to keep your yard looking freshly manicured all season long.</p>
       </div>
 
-      <!-- Driveway & Pathway Shoveling (Blue Highlight Outline) -->
+      <!-- Driveway & Pathway Shoveling (Highlighted Winter Service) -->
       <div class="bg-brand-lightblue p-6 rounded-xl border-2 border-brand-blue shadow-md flex flex-col relative">
-        <span class="absolute -top-3 right-4 bg-brand-blue text-white text-xs font-bold px-2.5 py-0.5 rounded-full">Winter Service</span>
+        <span class="absolute -top-3 right-4 bg-brand-blue text-white text-xs font-bold px-2.5 py-0.5 rounded-full shadow-sm">Winter Service</span>
         <div class="w-12 h-12 bg-blue-100 text-brand-blue rounded-lg flex items-center justify-center text-xl font-bold mb-4">
           <i class="fa-solid fa-snowflake"></i>
         </div>
@@ -134,11 +135,10 @@
         <h3 class="text-lg font-bold text-brand-slate mb-2">Misc Yard Services</h3>
         <p class="text-brand-gray text-sm flex-grow">Have a custom outdoor task? We assist with weeding, mulch spreading, branch hauling, and heavy lifting.</p>
       </div>
-
     </div>
   </section>
 
-  <!-- Our Work Showcase Section (No file uploader, clean grid) -->
+  <!-- Our Work Showcase Section (9:16 TikTok Vertical Aspect Ratio) -->
   <section id="work" class="py-12 bg-white border-y border-gray-200">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-8">
@@ -146,77 +146,89 @@
         <p class="text-brand-gray text-sm md:text-base mt-1">Real photos and videos from our local jobs in Whitby, Ontario</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- Work Item 1 -->
-        <div class="bg-brand-bgLight rounded-lg border border-gray-200 overflow-hidden shadow-sm">
-          <img src="media/mowing1.jpg" alt="Lawn Mowing Work" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Lawn+Mowing+Photo';"/>
-          <div class="p-3">
-            <p class="font-bold text-sm text-brand-slate">Lawn Mowing & Edging</p>
-            <p class="text-xs text-brand-gray">Williamsburg, Whitby</p>
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <!-- Work Item 1 (9:16 Aspect Ratio) -->
+        <div class="bg-brand-bgLight rounded-xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+          <div class="w-full aspect-[9/16] bg-slate-900 overflow-hidden">
+            <img src="mowing1.jpg" alt="Lawn Mowing Work" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/360x640/16a34a/ffffff?text=Lawn+Mowing+Photo';" />
+          </div>
+          <div class="p-3 bg-white border-t border-gray-100">
+            <p class="font-bold text-xs md:text-sm text-brand-slate">Lawn Mowing</p>
+            <p class="text-[10px] md:text-xs text-brand-gray">Williamsburg, Whitby</p>
           </div>
         </div>
 
-        <!-- Work Item 2 -->
-        <div class="bg-brand-bgLight rounded-lg border border-gray-200 overflow-hidden shadow-sm">
-          <img src="media/cleanup1.jpg" alt="Yard Cleanup Work" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Yard+Cleanup+Photo';"/>
-          <div class="p-3">
-            <p class="font-bold text-sm text-brand-slate">Yard Cleanup</p>
-            <p class="text-xs text-brand-gray">Williamsburg, Whitby</p>
+        <!-- Work Item 2 (9:16 Aspect Ratio) -->
+        <div class="bg-brand-bgLight rounded-xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+          <div class="w-full aspect-[9/16] bg-slate-900 overflow-hidden">
+            <img src="cleanup1.jpg" alt="Yard Cleanup Work" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/360x640/16a34a/ffffff?text=Yard+Cleanup+Photo';" />
+          </div>
+          <div class="p-3 bg-white border-t border-gray-100">
+            <p class="font-bold text-xs md:text-sm text-brand-slate">Yard Cleanup</p>
+            <p class="text-[10px] md:text-xs text-brand-gray">Williamsburg, Whitby</p>
           </div>
         </div>
 
-        <!-- Work Item 3 -->
-        <div class="bg-brand-bgLight rounded-lg border-2 border-brand-blue overflow-hidden shadow-sm">
-          <img src="media/shoveling1.jpg" alt="Driveway Shoveling Work" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Pathway+Shoveling+Photo';"/>
-          <div class="p-3 bg-brand-lightblue">
-            <p class="font-bold text-sm text-brand-slate">Pathway & Driveway Clearing</p>
-            <p class="text-xs text-brand-gray">Williamsburg, Whitby</p>
+        <!-- Work Item 3 (9:16 Aspect Ratio - Winter Service Highlight) -->
+        <div class="bg-brand-lightblue rounded-xl border-2 border-brand-blue overflow-hidden shadow-sm flex flex-col">
+          <div class="w-full aspect-[9/16] bg-slate-900 overflow-hidden">
+            <img src="shoveling1.jpg" alt="Driveway Shoveling Work" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/360x640/2563eb/ffffff?text=Shoveling+Photo';" />
+          </div>
+          <div class="p-3 bg-brand-lightblue border-t border-blue-100">
+            <p class="font-bold text-xs md:text-sm text-brand-slate">Pathway Clearing</p>
+            <p class="text-[10px] md:text-xs text-brand-gray">Williamsburg, Whitby</p>
           </div>
         </div>
 
-        <!-- Work Video Item -->
-        <div class="bg-brand-bgLight rounded-lg border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
-          <video controls class="w-full h-48 object-cover bg-black" poster="https://via.placeholder.com/400x300?text=Work+Video+Preview">
-            <source src="media/work-video.mp4" type="video/mp4"/>
-            Your browser does not support video play.
-          </video>
-          <div class="p-3">
-            <p class="font-bold text-sm text-brand-slate">Job Clip Video</p>
-            <p class="text-xs text-brand-gray">Williamsburg, Whitby</p>
+        <!-- Work Video Item (9:16 Vertical Video) -->
+        <div class="bg-brand-bgLight rounded-xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+          <div class="w-full aspect-[9/16] bg-black overflow-hidden relative">
+            <video controls class="w-full h-full object-cover">
+              <source src="work-video.mp4" type="video/mp4"/>
+              Your browser does not support video playback.
+            </video>
+          </div>
+          <div class="p-3 bg-white border-t border-gray-100">
+            <p class="font-bold text-xs md:text-sm text-brand-slate">Job Clip Video</p>
+            <p class="text-[10px] md:text-xs text-brand-gray">Williamsburg, Whitby</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Social Media & Google Reviews Section -->
-  <section class="py-10 bg-brand-bgLight border-b border-gray-200">
+  <!-- Social Media & Google Reviews Cards -->
+  <section class="py-12 bg-brand-bgLight border-b border-gray-200">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-2xl font-extrabold text-brand-slate mb-2">Connect With Us & Read Reviews</h2>
-      <p class="text-brand-gray text-sm mb-6">Follow our work on social media or leave us feedback on Google!</p>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-brand-slate mb-2">Connect With Us & Read Reviews</h2>
+      <p class="text-brand-gray text-sm md:text-base mb-8">Follow our work on social media or leave us feedback on Google!</p>
       
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
-        <a href="#" target="_blank" class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col items-center">
-          <i class="fa-brands fa-tiktok text-2xl text-black mb-2"></i>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@massive.lawncare" target="_blank" rel="noopener noreferrer" class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-black transition-all flex flex-col items-center">
+          <i class="fa-brands fa-tiktok text-3xl text-black mb-2"></i>
           <span class="font-bold text-xs md:text-sm text-brand-slate">TikTok</span>
         </a>
-        <a href="#" target="_blank" class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col items-center">
-          <i class="fa-brands fa-instagram text-2xl text-pink-600 mb-2"></i>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/massivelawncare/" target="_blank" rel="noopener noreferrer" class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-pink-500 transition-all flex flex-col items-center">
+          <i class="fa-brands fa-instagram text-3xl text-pink-600 mb-2"></i>
           <span class="font-bold text-xs md:text-sm text-brand-slate">Instagram</span>
         </a>
-        <a href="#" target="_blank" class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col items-center">
-          <i class="fa-brands fa-facebook text-2xl text-blue-600 mb-2"></i>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61579170967806&locale=fr_CA" target="_blank" rel="noopener noreferrer" class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-600 transition-all flex flex-col items-center">
+          <i class="fa-brands fa-facebook text-3xl text-blue-600 mb-2"></i>
           <span class="font-bold text-xs md:text-sm text-brand-slate">Facebook</span>
         </a>
-        <a href="#" target="_blank" class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col items-center">
-          <i class="fa-brands fa-google text-2xl text-amber-500 mb-2"></i>
+        <!-- Google Reviews -->
+        <a href="https://share.google/9PR1IHuJycWxng1Y" target="_blank" rel="noopener noreferrer" class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center">
+          <i class="fa-brands fa-google text-3xl text-amber-500 mb-2"></i>
           <span class="font-bold text-xs md:text-sm text-brand-slate">Google Reviews</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Quote & Contact Section -->
+  <!-- Quote & Contact Form Section -->
   <section id="quote" class="py-12 md:py-16 max-w-4xl mx-auto px-4 w-full">
     <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-10 shadow-sm">
       <div class="text-center mb-8">
@@ -277,12 +289,12 @@
         </div>
       </div>
 
-      <!-- Social Links in Footer -->
+      <!-- Footer Social Icons -->
       <div class="flex items-center space-x-4 text-gray-500">
-        <a href="https://www.tiktok.com/@massive.lawncare" title="TikTok" class="hover:text-black transition-colors"><i class="fa-brands fa-tiktok text-lg"></i></a>
-        <a href="https://www.instagram.com/massivelawncare/" title="Instagram" class="hover:text-pink-600 transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61579170967806&locale=fr_CA" title="Facebook" class="hover:text-blue-600 transition-colors"><i class="fa-brands fa-facebook text-lg"></i></a>
-        <a href="https://share.google/9PRlIHuJycxWxng1Y" title="Google Reviews" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-google text-lg"></i></a>
+        <a href="https://www.tiktok.com/@massive.lawncare" target="_blank" rel="noopener noreferrer" title="TikTok" class="hover:text-black transition-colors"><i class="fa-brands fa-tiktok text-lg"></i></a>
+        <a href="https://www.instagram.com/massivelawncare/" target="_blank" rel="noopener noreferrer" title="Instagram" class="hover:text-pink-600 transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61579170967806&locale=fr_CA" target="_blank" rel="noopener noreferrer" title="Facebook" class="hover:text-blue-600 transition-colors"><i class="fa-brands fa-facebook text-lg"></i></a>
+        <a href="https://share.google/9PR1IHuJycWxng1Y" target="_blank" rel="noopener noreferrer" title="Google Reviews" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-google text-lg"></i></a>
       </div>
 
       <p class="text-xs text-brand-gray">

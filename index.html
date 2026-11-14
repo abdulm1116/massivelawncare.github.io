@@ -16,6 +16,7 @@
               darkgreen: '#15803d',
               lightgreen: '#f0fdf4',
               blue: '#2563eb',
+              darkblue: '#1d4ed8',
               lightblue: '#eff6ff',
               slate: '#1e293b',
               gray: '#64748b',
@@ -49,31 +50,39 @@
     <i class="fa-solid fa-location-dot mr-1"></i> Exclusively Serving Williamsburg, Whitby, Ontario &bull; Low Price, High Quality
   </div>
 
-  <!-- Header / Navigation (Logo Only) -->
+  <!-- Header / Navigation -->
   <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-2">
       
       <!-- Header Logo Only -->
       <a href="#" class="flex items-center">
         <img 
           src="massive_mowing_final_logo-removebg-preview.jpg" 
           alt="Massive Lawncare Logo" 
-          class="h-14 w-auto object-contain hover:scale-105 transition-transform duration-200"
+          class="h-12 md:h-14 w-auto object-contain hover:scale-105 transition-transform duration-200"
           onerror="handleImageError(this, 'media/massive_mowing_final_logo-removebg-preview.jpg', 'https://placehold.co/180x70/16a34a/ffffff?text=Massive+Lawncare');"
         />
       </a>
 
-      <!-- Quick Contact & Social Media Icons (Header) -->
-      <div class="flex items-center space-x-3 md:space-x-4">
-        <div class="hidden sm:flex items-center space-x-3 text-gray-600 mr-2">
+      <!-- Quick Contact, Shovelling Document & Social Media Icons (Header) -->
+      <div class="flex items-center space-x-2 md:space-x-3">
+        <div class="hidden lg:flex items-center space-x-3 text-gray-600 mr-2">
           <a href="https://www.tiktok.com/@massive.lawncare" target="_blank" rel="noopener noreferrer" title="TikTok" class="hover:text-black transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
           <a href="https://www.instagram.com/massivelawncare/" target="_blank" rel="noopener noreferrer" title="Instagram" class="hover:text-pink-600 transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://www.facebook.com/profile.php?id=61579170967806&locale=fr_CA" target="_blank" rel="noopener noreferrer" title="Facebook" class="hover:text-blue-600 transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
           <a href="https://share.google/9PR1IHuJycWxng1Y" target="_blank" rel="noopener noreferrer" title="Google Reviews" class="hover:text-amber-500 transition-colors text-xl"><i class="fa-brands fa-google"></i></a>
         </div>
-        <a href="tel:+12892362654" class="bg-brand-green hover:bg-brand-darkgreen text-white text-xs md:text-sm font-bold py-2.5 px-4 rounded-lg shadow-sm transition-all flex items-center space-x-2">
+
+        <!-- Shovelling 2026-2027 Document Button -->
+        <a href="https://docs.google.com/document/d/1R3AKYPSU7JyWiwm83hLjwolmt8h3SkX7SJ_3TBx0hAA/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-brand-blue hover:bg-brand-darkblue text-white text-xs md:text-sm font-bold py-2.5 px-3 md:px-4 rounded-lg shadow-sm transition-all flex items-center space-x-1.5">
+          <i class="fa-solid fa-snowflake"></i>
+          <span>Shovelling 2026-2027 document</span>
+        </a>
+
+        <!-- Call/Text Button -->
+        <a href="tel:+12892362654" class="bg-brand-green hover:bg-brand-darkgreen text-white text-xs md:text-sm font-bold py-2.5 px-3 md:px-4 rounded-lg shadow-sm transition-all flex items-center space-x-2">
           <i class="fa-solid fa-phone"></i>
-          <span>Call/Text Us</span>
+          <span class="hidden sm:inline">Call/Text Us</span>
         </a>
       </div>
 

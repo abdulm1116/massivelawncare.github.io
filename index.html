@@ -110,6 +110,10 @@
         <a href="mailto:massivelawncare1@gmail.com" class="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 text-brand-slate font-bold py-3.5 px-8 rounded-lg transition-all text-center border border-gray-300">
           <i class="fa-solid fa-envelope mr-2"></i>Email Us Directly
         </a>
+        <!-- Service Area Map Button -->
+        <button onclick="document.getElementById('mapModal').classList.remove('hidden')" class="w-full sm:w-auto bg-brand-lightblue hover:bg-blue-100 text-brand-blue font-bold py-3.5 px-8 rounded-lg transition-all text-center border border-blue-200">
+          <i class="fa-solid fa-map-location-dot mr-2"></i>View Our Service Area
+        </button>
       </div>
     </div>
   </section>
@@ -326,6 +330,34 @@
 
     </div>
   </footer>
+
+  <!-- Service Area Map Popup Modal -->
+  <div id="mapModal" class="hidden fixed inset-0 z-50 bg-black/75 flex items-center justify-center p-4" onclick="if(event.target === this) this.classList.add('hidden')">
+    <div class="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl border border-gray-200">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-5 py-4 border-b border-gray-200">
+        <h3 class="font-bold text-lg text-brand-slate">
+          <i class="fa-solid fa-location-dot text-brand-green mr-2"></i>Williamsburg Service Area
+        </h3>
+        <button onclick="document.getElementById('mapModal').classList.add('hidden')" class="text-gray-400 hover:text-gray-700 text-2xl leading-none font-bold">&times;</button>
+      </div>
+      <!-- Map Image -->
+      <div class="p-4 bg-brand-bgLight flex justify-center">
+        <img 
+          src="media/service-area.jpg" 
+          alt="Massive Lawncare Service Area Map" 
+          class="max-h-[70vh] w-auto rounded-lg object-contain border border-gray-200"
+          onerror="handleImageError(this, 'service-area.jpg', 'https://placehold.co/600x400/16a34a/ffffff?text=Upload+service-area.jpg');"
+        />
+      </div>
+      <!-- Modal Footer -->
+      <div class="px-5 py-3 bg-white border-t border-gray-200 text-right">
+        <button onclick="document.getElementById('mapModal').classList.add('hidden')" class="bg-brand-slate hover:bg-slate-800 text-white text-sm font-bold py-2 px-5 rounded-lg transition-colors">
+          Close Map
+        </button>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

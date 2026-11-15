@@ -103,13 +103,17 @@
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
         <!-- Team Member 1 -->
         <div class="bg-brand-bgLight p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center text-center">
-          <img src="founder.jpg" alt="Founder" class="w-20 h-20 rounded-full object-cover mb-3 border-2 border-brand-green shadow-sm" />
-            <i class="fa-solid fa-user"></i>
-          </div>
-          <h2 class="text-lg font-extrabold text-brand-slate">Founder - Abdul</h2>
-          <p class="text-xs font-bold uppercase tracking-wider text-brand-green mb-2">Founder</p>
+          <img 
+            src="founder.jpg" 
+            alt="Abdul" 
+            class="w-24 h-24 rounded-full object-cover mb-4 border-2 border-brand-green shadow-sm"
+            onerror="handleImageError(this, 'media/founder.jpg', 'https://placehold.co/150x150/16a34a/ffffff?text=Abdul');"
+          />
+          <h2 class="text-lg font-extrabold text-brand-slate">Abdul</h2>
+          <p class="text-xs font-bold uppercase tracking-wider text-brand-green mb-2">Founder &amp; Operator &bull; Williamsburg Resident</p>
           <p class="text-sm text-brand-gray">
             Founder of Massive Lawncare. I handle all customer bookings, quotes, and scheduling, maintain our equipment, and lead every lawn care and snow removal job across Williamsburg.
           </p>
@@ -117,18 +121,19 @@
 
         <!-- Team Member 2 -->
         <div class="bg-brand-bgLight p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center text-center">
-          <img src="dallas.jpg" alt="Dallas" class="w-20 h-20 rounded-full object-cover mb-3 border-2 border-brand-blue shadow-sm" />
-            <i class="fa-solid fa-user"></i>
-          </div>
-          <h2 class="text-lg font-extrabold text-brand-slate">Co-Founder - Dallas</h2>
-          <p class="text-xs font-bold uppercase tracking-wider text-brand-blue mb-2">Co-Founder</p>
+          <img 
+            src="dallas.jpg" 
+            alt="Dallas" 
+            class="w-24 h-24 rounded-full object-cover mb-4 border-2 border-brand-blue shadow-sm"
+            onerror="handleImageError(this, 'media/dallas.jpg', 'https://placehold.co/150x150/2563eb/ffffff?text=Dallas');"
+          />
+          <h2 class="text-lg font-extrabold text-brand-slate">Dallas</h2>
+          <p class="text-xs font-bold uppercase tracking-wider text-brand-blue mb-2">Crew Member &bull; Williamsburg Resident</p>
           <p class="text-sm text-brand-gray">
             Local high school student assisting with property maintenance, seasonal yard cleanups, leaf raking, and winter shoveling to help keep Williamsburg yards and walkways clean and well-maintained.
           </p>
         </div>
       </div>
-    </div>
-  </section>
 
   <!-- Frequently Asked Questions (FAQ) Section -->
   <section id="faq" class="py-12 md:py-16 max-w-4xl mx-auto px-4 w-full">

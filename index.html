@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+  <style>
+    summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Massive Lawncare | Williamsburg, Whitby, Ontario</title>
@@ -67,36 +72,60 @@
         />
       </a>
 
-      <!-- Quick Contact, Shovelling Document & Social Media Icons (Header) -->
-      <div class="flex items-center space-x-2 md:space-x-3">
+<!-- Desktop Buttons & Socials (Hidden on Mobile) -->
+      <div class="hidden md:flex items-center space-x-3">
+        <!-- Social Media Icons -->
         <div class="hidden lg:flex items-center space-x-3 text-gray-600 mr-2">
-          <a href="https://www.tiktok.com/@massive.lawncare" target="_blank" rel="noopener noreferrer" title="TikTok" class="hover:text-black transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="https://www.instagram.com/massivelawncare/" target="_blank" rel="noopener noreferrer" title="Instagram" class="hover:text-pink-600 transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=61579170967806&locale=fr_CA" target="_blank" rel="noopener noreferrer" title="Facebook" class="hover:text-blue-600 transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.google.com/search?q=massive+lawncare&ie=UTF-8#lrd=0x2b94c687bbe7cf97:0x8b2fb1d124f02ded,3,,,," target="_blank" rel="noopener noreferrer" title="Google Reviews" class="hover:text-amber-500 transition-colors text-xl"><i class="fa-brands fa-google"></i></a>
+          <a href="https://www.tiktok.com/@massive.lawncare" target="_blank" rel="noopener noreferrer" title="TikTok" class="hover:text-black transition-colors text-lg"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/massivelawncare/" target="_blank" rel="noopener noreferrer" title="Instagram" class="hover:text-pink-600 transition-colors text-lg"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61579170967806&locale=fr_CA" target="_blank" rel="noopener noreferrer" title="Facebook" class="hover:text-blue-600 transition-colors text-lg"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.google.com/search?q=massive+lawncare&ie=UTF-8#lrd=0x2b94c687bbe7cf97:0x8b2fb1d124f02ded,3,,,," target="_blank" rel="noopener noreferrer" title="Google Reviews" class="hover:text-amber-500 transition-colors text-lg"><i class="fa-brands fa-google"></i></a>
         </div>
 
-        <!-- Team & FAQs Page Link -->
-        <a href="about.html" class="bg-gray-100 hover:bg-gray-200 text-brand-slate text-xs md:text-sm font-bold py-2.5 px-3 md:px-4 rounded-lg transition-all border border-gray-300">
+        <a href="about.html" class="bg-gray-100 hover:bg-gray-200 text-brand-slate text-sm font-bold py-2.5 px-4 rounded-lg transition-all border border-gray-300">
           Team &amp; FAQs
         </a>
 
-        <!-- Shovelling 2026-2027 Document Button -->
-        <a href="https://docs.google.com/document/d/1C67DPGBCdfuV9cMcAZwfGWxurfu0uT9N2m74SsuAsU4/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-brand-blue hover:bg-brand-darkblue text-white text-xs md:text-sm font-bold py-2.5 px-3 md:px-4 rounded-lg shadow-sm transition-all flex items-center space-x-1.5">
+        <a href="https://docs.google.com/document/d/1C67DPGBCdfuV9cMcAZwfGWxurfu0uT9N2m74SsuAsU4/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-brand-blue hover:bg-brand-darkblue text-white text-sm font-bold py-2.5 px-4 rounded-lg shadow-sm transition-all flex items-center space-x-1.5">
           <i class="fa-solid fa-snowflake"></i>
           <span>Shovelling 2026-2027 document</span>
         </a>
 
-        <!-- Call/Text Button -->
-        <a href="tel:+12892362654" class="bg-brand-green hover:bg-brand-darkgreen text-white text-xs md:text-sm font-bold py-2.5 px-3 md:px-4 rounded-lg shadow-sm transition-all flex items-center space-x-2">
+        <a href="tel:+12892362654" class="bg-brand-green hover:bg-brand-darkgreen text-white text-sm font-bold py-2.5 px-4 rounded-lg shadow-sm transition-all flex items-center space-x-2">
           <i class="fa-solid fa-phone"></i>
-          <span class="hidden sm:inline">Call/Text Us</span>
+          <span>Call/Text Us</span>
         </a>
       </div>
 
+      <!-- Mobile Menu Dropdown (Hidden on Desktop) -->
+      <details class="group relative md:hidden">
+        <summary class="list-none cursor-pointer bg-gray-100 hover:bg-gray-200 text-brand-slate font-bold text-sm py-2.5 px-3.5 rounded-lg border border-gray-300 flex items-center space-x-2 select-none">
+          <i class="fa-solid fa-bars group-open:hidden"></i>
+          <i class="fa-solid fa-xmark hidden group-open:inline"></i>
+          <span>Menu</span>
+        </summary>
+
+        <div class="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 p-3 flex flex-col space-y-2.5 z-50">
+          <a href="about.html" class="bg-gray-100 hover:bg-gray-200 text-brand-slate text-sm font-bold py-2.5 px-3.5 rounded-lg transition-all flex items-center space-x-2.5">
+            <i class="fa-solid fa-users w-4 text-center text-brand-green"></i>
+            <span>Team &amp; FAQs</span>
+          </a>
+
+          <a href="https://docs.google.com/document/d/1C67DPGBCdfuV9cMcAZwfGWxurfu0uT9N2m74SsuAsU4/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-brand-blue hover:bg-brand-darkblue text-white text-sm font-bold py-2.5 px-3.5 rounded-lg shadow-sm transition-all flex items-center space-x-2.5">
+            <i class="fa-solid fa-snowflake w-4 text-center"></i>
+            <span>Shovelling 2026-2027 Doc</span>
+          </a>
+
+          <a href="tel:+12892362654" class="bg-brand-green hover:bg-brand-darkgreen text-white text-sm font-bold py-2.5 px-3.5 rounded-lg shadow-sm transition-all flex items-center space-x-2.5">
+            <i class="fa-solid fa-phone w-4 text-center"></i>
+            <span>Call/Text Us</span>
+          </a>
+        </div>
+      </details>
+
     </div>
   </header>
-
+  
   <!-- Hero Section -->
   <section class="bg-white border-b border-gray-200 py-12 md:py-16">
     <div class="max-w-4xl mx-auto px-4 text-center">
@@ -365,6 +394,13 @@
       </div>
     </div>
   </div>
-
+<script>
+    document.addEventListener('click', function(e) {
+      const menu = document.querySelector('header details');
+      if (menu && menu.hasAttribute('open') && !menu.contains(e.target)) {
+        menu.removeAttribute('open');
+      }
+    });
+  </script>
 </body>
 </html>
